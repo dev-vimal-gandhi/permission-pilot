@@ -2,9 +2,9 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## About Permission Pilot
+## About Serva Perms
 
-Permission Pilot is an Android app that helps users understand and manage app permissions. It provides detailed views of which apps request which permissions, tracks permission changes over time, and offers filtering and sorting tools.
+Serva Perms is an Android app that helps users understand and manage app permissions. It provides detailed views of which apps request which permissions, tracks permission changes over time, and offers filtering and sorting tools.
 
 ## Build Flavors
 

@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">Les services Google Play sont inaccessibles.</string>
     <string name="upgrades_no_purchases_found_check_account">Aucun achat n’a été trouvé. Utilisez-vous le bon compte ?</string>
-    <string name="upgrade_screen_preamble">Permission Pilot est sans publicité et respecte votre vie privée. La mise à niveau soutient le développement continu.</string>
+    <string name="upgrade_screen_preamble">Serva Perms est sans publicité et respecte votre vie privée. La mise à niveau soutient le développement continu.</string>
     <string name="upgrade_screen_subscription_trial_action">Commencer l’essai gratuit</string>
     <string name="upgrade_screen_subscription_action">M’abonner</string>
     <string name="upgrade_screen_subscription_action_hint">%s/mois, annulez à tout moment</string>

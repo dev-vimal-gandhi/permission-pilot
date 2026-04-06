@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Hulp</string>
     <string name="general_error_label">Fout</string>
     <string name="general_share_action">Deel</string>
@@ -518,7 +518,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dm %2$ds</string>
     <string name="debug_debuglog_screen_duration_s">%1$ds</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Vraag</string>
     <string name="contact_email_tag_feature">Kenmerk</string>
@@ -526,8 +526,8 @@
     <string name="contact_email_section_expected_behavior">--- Verwagte Gedrag ---</string>
     <string name="contact_email_section_device_info">--- Toestel-inligting ---</string>
     <string name="onboarding_body1">Hierdie app help jou om deur geïnstalleerde toepassings te navigeer en toestemmings te ontdek.</string>
-    <string name="onboarding_body2">Permission Pilot versamel Geïnstalleerde Toepassing inligting om die lys van jou apps en kruis-verwysing van hul toestemmings moontlik te maak wanneer jy hierdie toepassing gebruik.</string>
-    <string name="onboarding_body3">Permission Pilot het geen advertensies nie en verwerk slegs data plaaslik.</string>
+    <string name="onboarding_body2">Serva Perms versamel Geïnstalleerde Toepassing inligting om die lys van jou apps en kruis-verwysing van hul toestemmings moontlik te maak wanneer jy hierdie toepassing gebruik.</string>
+    <string name="onboarding_body3">Serva Perms het geen advertensies nie en verwerk slegs data plaaslik.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">Tema modus</string>
     <string name="ui_theme_mode_system_label">Stelsel</string>
@@ -553,7 +553,7 @@
     <string name="upgrade_benefit_support">Ondersteun die ontwikkelaar</string>
     <string name="upgrade_benefit_manifest_viewer">Blaai deur rou app-manifeste</string>
     <string name="general_upgrade_action">Opgradeer</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Watcher</string>
     <string name="watcher_dashboard_feature_title">Toestemmingswatcher</string>

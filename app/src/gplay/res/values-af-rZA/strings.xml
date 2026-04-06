@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">Google Play-dienste is nie beskikbaar nie.</string>
     <string name="upgrades_no_purchases_found_check_account">Geen aankope gevind nie. Gebruik jy die regte rekening?</string>
-    <string name="upgrade_screen_preamble">Permission Pilot is sonder advertensies en respekteer jou privaatheid. Opgradering ondersteun voortgesette ontwikkeling.</string>
+    <string name="upgrade_screen_preamble">Serva Perms is sonder advertensies en respekteer jou privaatheid. Opgradering ondersteun voortgesette ontwikkeling.</string>
     <string name="upgrade_screen_subscription_trial_action">Begin gratis proeftydperk</string>
     <string name="upgrade_screen_subscription_action">Teken in</string>
     <string name="upgrade_screen_subscription_action_hint">%s/maand, kanselleer enige tyd</string>

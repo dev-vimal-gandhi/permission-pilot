@@ -610,7 +610,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dد %2$dث</string>
     <string name="debug_debuglog_screen_duration_s">%1$dث</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">سؤال</string>
     <string name="contact_email_tag_feature">ميزة</string>
@@ -645,7 +645,7 @@
     <string name="upgrade_benefit_support">دعم المطوّر</string>
     <string name="upgrade_benefit_manifest_viewer">تصفح بيانات التطبيق الخام</string>
     <string name="general_upgrade_action">ترقية</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">مراقب</string>
     <string name="watcher_dashboard_feature_title">مراقب الأذونات</string>

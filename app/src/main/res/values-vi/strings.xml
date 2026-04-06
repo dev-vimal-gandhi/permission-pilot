@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Trợ giúp</string>
     <string name="general_error_label">Lỗi</string>
     <string name="general_share_action">Chia sẻ</string>
@@ -495,7 +495,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dp %2$dg</string>
     <string name="debug_debuglog_screen_duration_s">%1$dg</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Câu hỏi</string>
     <string name="contact_email_tag_feature">Tính năng</string>
@@ -503,8 +503,8 @@
     <string name="contact_email_section_expected_behavior">--- Hành vi mong đợi ---</string>
     <string name="contact_email_section_device_info">--- Thông tin thiết bị ---</string>
     <string name="onboarding_body1">Ứng dụng này giúp bạn điều hướng các ứng dụng đã cài đặt và khám phá quyền.</string>
-    <string name="onboarding_body2">Permission Pilot thu thập thông tin ứng dụng đã cài đặt để cho phép liệt kê ứng dụng của bạn và tham chiếu chéo quyền của chúng khi sử dụng ứng dụng này.</string>
-    <string name="onboarding_body3">Permission Pilot không có quảng cáo và chỉ xử lý dữ liệu cục bộ.</string>
+    <string name="onboarding_body2">Serva Perms thu thập thông tin ứng dụng đã cài đặt để cho phép liệt kê ứng dụng của bạn và tham chiếu chéo quyền của chúng khi sử dụng ứng dụng này.</string>
+    <string name="onboarding_body3">Serva Perms không có quảng cáo và chỉ xử lý dữ liệu cục bộ.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">Giao diện</string>
     <string name="ui_theme_mode_system_label">Hệ thống</string>
@@ -530,7 +530,7 @@
     <string name="upgrade_benefit_support">Hỗ trợ nhà phát triển</string>
     <string name="upgrade_benefit_manifest_viewer">Duyệt manifest thô của ứng dụng</string>
     <string name="general_upgrade_action">Nâng cấp</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Bộ theo dõi</string>
     <string name="watcher_dashboard_feature_title">Theo dõi Quyền</string>

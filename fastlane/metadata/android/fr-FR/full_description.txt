@@ -1,4 +1,4 @@
-<i>Permission Pilot </i> est une nouvelle sorte d’appli pour vous aider à examiner les applis et leurs autorisations.
+<i>Serva Perms </i> est une nouvelle sorte d’appli pour vous aider à examiner les applis et leurs autorisations.
 
 À chaque mise à jour d’Android, les autorisations deviennent de plus en plus complexes.
 Le fait qu’Android affiche les autorisations à différents endroits ne facilite pas leur vérification :
@@ -8,7 +8,7 @@ Le fait qu’Android affiche les autorisations à différents endroits ne facili
 * Gestionnaire d’autorisations
 * et plus encore…
 
-<i>Permission Pilot</i> répertorie toutes les autorisations en un seul endroit, pour une vue d’ensemble des autorisations des applis.
+<i>Serva Perms</i> répertorie toutes les autorisations en un seul endroit, pour une vue d’ensemble des autorisations des applis.
 
 Deux perspectives s’offrent à vous : vous pouvez soit visualiser toutes les autorisations demandées par une appli, soit toutes les applis qui demandent une autorisation précise.
 

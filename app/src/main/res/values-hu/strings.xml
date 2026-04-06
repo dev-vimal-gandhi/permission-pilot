@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Segitseg</string>
     <string name="general_error_label">Hiba</string>
     <string name="general_share_action">Megosztas</string>
@@ -518,7 +518,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$d p %2$d m</string>
     <string name="debug_debuglog_screen_duration_s">%1$d m</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Kérdés</string>
     <string name="contact_email_tag_feature">Funkció</string>
@@ -526,8 +526,8 @@
     <string name="contact_email_section_expected_behavior">--- Várt viselkedés ---</string>
     <string name="contact_email_section_device_info">--- Eszköz adatok ---</string>
     <string name="onboarding_body1">Ez az alkalmazas segit navigalni a telepitett alkalmazasok kozott es felfedezni az engedelyeket.</string>
-    <string name="onboarding_body2">A Permission Pilot osszegyujti a telepitett alkalmazasok informacioit, hogy lehetove tegye az alkalmazasaid listazasat es engedelyeik kereszthivatkozasat az alkalmazas hasznalataa soran.</string>
-    <string name="onboarding_body3">A Permission Pilot reklamok nelkul mukodik es csak helyileg dolgozza fel az adatokat.</string>
+    <string name="onboarding_body2">A Serva Perms osszegyujti a telepitett alkalmazasok informacioit, hogy lehetove tegye az alkalmazasaid listazasat es engedelyeik kereszthivatkozasat az alkalmazas hasznalataa soran.</string>
+    <string name="onboarding_body3">A Serva Perms reklamok nelkul mukodik es csak helyileg dolgozza fel az adatokat.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">Téma mód</string>
     <string name="ui_theme_mode_system_label">Rendszer</string>
@@ -553,7 +553,7 @@
     <string name="upgrade_benefit_support">Támogasd a fejlesztőt</string>
     <string name="upgrade_benefit_manifest_viewer">Nyers alkalmazás-manifestek böngészése</string>
     <string name="general_upgrade_action">Frissítés</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Figyelő</string>
     <string name="watcher_dashboard_feature_title">Jogosultság-figyelő</string>

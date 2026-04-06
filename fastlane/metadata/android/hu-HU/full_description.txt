@@ -1,4 +1,4 @@
-<i>Permission Pilot</i> egy új típusú alkalmazás, amely segít áttekinteni az alkalmazásokat és azok engedélyeit.
+<i>Serva Perms</i> egy új típusú alkalmazás, amely segít áttekinteni az alkalmazásokat és azok engedélyeit.
 
 Minden Android-frissítéssel egyre összetettebbé válnak az engedélyek.
 Az Android különböző helyeken jeleníti meg az engedélyeket, ami nem könnyíti meg az áttekintést:
@@ -8,7 +8,7 @@ Az Android különböző helyeken jeleníti meg az engedélyeket, ami nem könny
 * Engedélykezelő
 * és még több...
 
-<i>Permission Pilot</i> egyetlen helyen listázza az összes engedélyt, madártávlati képet adva az alkalmazások engedélyeiről.
+<i>Serva Perms</i> egyetlen helyen listázza az összes engedélyt, madártávlati képet adva az alkalmazások engedélyeiről.
 
 Két nézőpont érhető el: megtekintheti az összes engedélyt, amelyet egy alkalmazás kér, vagy az összes alkalmazást, amely egy adott engedélyt kér.
 

@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">Οι υπηρεσίες Google Play δεν είναι διαθέσιμες.</string>
     <string name="upgrades_no_purchases_found_check_account">Δεν βρέθηκαν αγορές. Χρησιμοποιείτε τον σωστό λογαριασμό;</string>
-    <string name="upgrade_screen_preamble">Το Permission Pilot είναι χωρίς διαφημίσεις και σέβεται την ιδιωτικότητά σας. Η αναβάθμιση υποστηρίζει τη συνεχή ανάπτυξη.</string>
+    <string name="upgrade_screen_preamble">Το Serva Perms είναι χωρίς διαφημίσεις και σέβεται την ιδιωτικότητά σας. Η αναβάθμιση υποστηρίζει τη συνεχή ανάπτυξη.</string>
     <string name="upgrade_screen_subscription_trial_action">Έναρξη δωρεάν δοκιμής</string>
     <string name="upgrade_screen_subscription_action">Εγγραφή</string>
     <string name="upgrade_screen_subscription_action_hint">%s/μήνα, ακύρωση ανά πάσα στιγμή</string>

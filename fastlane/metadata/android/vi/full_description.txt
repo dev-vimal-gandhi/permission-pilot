@@ -1,4 +1,4 @@
-<i>Permission Pilot</i> là một ứng dụng mới giúp bạn xem xét các ứng dụng và quyền của chúng.
+<i>Serva Perms</i> là một ứng dụng mới giúp bạn xem xét các ứng dụng và quyền của chúng.
 
 Với mỗi bản cập nhật Android, các quyền ngày càng trở nên phức tạp hơn.
 Android hiển thị quyền ở nhiều vị trí khác nhau, điều này không giúp bạn dễ dàng xem xét chúng hơn:
@@ -8,7 +8,7 @@ Android hiển thị quyền ở nhiều vị trí khác nhau, điều này khô
 * Trình quản lý quyền
 * và nhiều hơn nữa...
 
-<i>Permission Pilot</i> liệt kê tất cả các quyền ở một nơi duy nhất, cho bạn cái nhìn tổng quan về quyền của ứng dụng.
+<i>Serva Perms</i> liệt kê tất cả các quyền ở một nơi duy nhất, cho bạn cái nhìn tổng quan về quyền của ứng dụng.
 
 Có hai góc nhìn: Bạn có thể xem tất cả các quyền mà một ứng dụng yêu cầu, hoặc xem tất cả các ứng dụng yêu cầu một quyền cụ thể.
 

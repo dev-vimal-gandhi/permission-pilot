@@ -11,7 +11,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-LOCALES_FILE="$PROJECT_DIR/app/src/screenshotTest/kotlin/eu/darken/myperm/screenshots/PlayStoreLocales.kt"
+LOCALES_FILE="$PROJECT_DIR/app/src/screenshotTest/kotlin/com/servalabs/perms/screenshots/PlayStoreLocales.kt"
 REF_DIR="$PROJECT_DIR/app/src/screenshotTestGplayDebug/reference"
 
 # Default batch size — 2 locales × 7 composables = 14 renders per batch.
@@ -106,7 +106,7 @@ generate_locales_file() {
     local file="$2"
 
     cat > "$file" << 'HEADER'
-package eu.darken.myperm.screenshots
+package com.servalabs.perms.screenshots
 
 import android.content.res.Configuration
 import androidx.compose.ui.tooling.preview.Preview

@@ -1,6 +1,6 @@
 package testhelpers.logging
 
-import eu.darken.myperm.common.debug.logging.Logging
+import com.servalabs.perms.common.debug.logging.Logging
 
 class JUnitLogger(private val minLogLevel: Logging.Priority = Logging.Priority.VERBOSE) : Logging.Logger {
 

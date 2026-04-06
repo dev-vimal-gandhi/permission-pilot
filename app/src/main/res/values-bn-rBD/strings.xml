@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">সাহায্য</string>
     <string name="general_error_label">ত্রুটি</string>
     <string name="general_share_action">শেয়ার</string>
@@ -518,7 +518,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dমি %2$dসে</string>
     <string name="debug_debuglog_screen_duration_s">%1$dসে</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">প্রশ্ন</string>
     <string name="contact_email_tag_feature">ফিচার</string>
@@ -526,8 +526,8 @@
     <string name="contact_email_section_expected_behavior">--- প্রত্যাশিত আচরণ ---</string>
     <string name="contact_email_section_device_info">--- ডিভাইস তথ্য ---</string>
     <string name="onboarding_body1">এই অ্যাপ আপনাকে ইনস্টল করা অ্যাপ্লিকেশনগুলি নেভিগেট করতে এবং অনুমতি আবিষ্কার করতে সাহায্য করে।</string>
-    <string name="onboarding_body2">Permission Pilot ইনস্টল করা অ্যাপ্লিকেশনের তথ্য সংগ্রহ করে যাতে এই অ্যাপটি ব্যবহার করার সময় আপনার অ্যাপগুলি তালিকাভুক্ত করা এবং তাদের অনুমতিগুলির ক্রস-রেফারেন্স করা সম্ভব হয়।</string>
-    <string name="onboarding_body3">Permission Pilot-এ কোনো বিজ্ঞাপন নেই এবং শুধুমাত্র স্থানীয়ভাবে ডেটা প্রক্রিয়া করে।</string>
+    <string name="onboarding_body2">Serva Perms ইনস্টল করা অ্যাপ্লিকেশনের তথ্য সংগ্রহ করে যাতে এই অ্যাপটি ব্যবহার করার সময় আপনার অ্যাপগুলি তালিকাভুক্ত করা এবং তাদের অনুমতিগুলির ক্রস-রেফারেন্স করা সম্ভব হয়।</string>
+    <string name="onboarding_body3">Serva Perms-এ কোনো বিজ্ঞাপন নেই এবং শুধুমাত্র স্থানীয়ভাবে ডেটা প্রক্রিয়া করে।</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">থিমের ধরন</string>
     <string name="ui_theme_mode_system_label">সিস্টেম</string>
@@ -553,7 +553,7 @@
     <string name="upgrade_benefit_support">ডিভেলপারকে সমর্থন করুন</string>
     <string name="upgrade_benefit_manifest_viewer">কাঁচা অ্যাপ ম্যানিফেস্ট ব্রাউজ করুন</string>
     <string name="general_upgrade_action">আপগ্রেড করুন</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">রিপোর্টার</string>
     <string name="watcher_dashboard_feature_title">অনুমতি পর্যবেক্ষক</string>

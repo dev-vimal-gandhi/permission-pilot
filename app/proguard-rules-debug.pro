@@ -2,4 +2,4 @@
 -dontshrink
 -dontoptimize
 -dontpreverify
--keep class eu.darken.myperm.** { *; }
+-keep class com.servalabs.perms.** { *; }

@@ -1,4 +1,4 @@
-<i>Permission Pilot</i> celebeke nû ya sepanan e ku alîkariya we dike ku hûn sepan û destûrên wan binirxînin.
+<i>Serva Perms</i> celebeke nû ya sepanan e ku alîkariya we dike ku hûn sepan û destûrên wan binirxînin.
 
 Bi her nûvekirina Androidê re destûr her tevlihevtir dibin.
 Android destûran li cihên cihê cihê nîşan dide, ev jî nirxandina wan hêsantir nake:
@@ -8,7 +8,7 @@ Android destûran li cihên cihê cihê nîşan dide, ev jî nirxandina wan hês
 * Rêvebirê Destûran
 * û bêtir...
 
-<i>Permission Pilot</i> hemû destûran li yek cihî navnîş dike û ji we re dîmeneke berfireh a destûrên sepanan pêşkêş dike.
+<i>Serva Perms</i> hemû destûran li yek cihî navnîş dike û ji we re dîmeneke berfireh a destûrên sepanan pêşkêş dike.
 
 Du perspektîf hene: Hûn dikarin hemû destûrên ku sepaneke daxwaz dike bibînin, an jî hemû sepanên ku destûreke daxwaz dikin bibînin.
 

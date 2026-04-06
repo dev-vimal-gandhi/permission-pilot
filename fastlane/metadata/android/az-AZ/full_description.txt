@@ -1,4 +1,4 @@
-<i>Permission Pilot</i> tətbiqləri və onların icəzələrini nəzərdən keçirməyə kömək edən yeni növ bir tətbiqdir.
+<i>Serva Perms</i> tətbiqləri və onların icəzələrini nəzərdən keçirməyə kömək edən yeni növ bir tətbiqdir.
 
 Hər Android yeniləməsi ilə icəzələr daha mürəkkəb hala gəlir.
 Android-in icəzələri müxtəlif yerlərdə göstərməsi onları nəzərdən keçirməyi asanlaşdırmır:
@@ -8,7 +8,7 @@ Android-in icəzələri müxtəlif yerlərdə göstərməsi onları nəzərdən 
 * İcazə Meneceri
 * və daha çox...
 
-<i>Permission Pilot</i> bütün icəzələri tək bir yerlə sıralayır və tətbiq icəzələrinə quşbaxışı görünüş verir.
+<i>Serva Perms</i> bütün icəzələri tək bir yerlə sıralayır və tətbiq icəzələrinə quşbaxışı görünüş verir.
 
 İki perspektiv mövcuddur: bir tətbiqin tələb etdiyi bütün icəzələri və ya bir icəzəni tələb edən bütün tətbiqləri görə bilərsiniz.
 

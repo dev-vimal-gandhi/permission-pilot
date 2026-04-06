@@ -46,9 +46,9 @@ fun MyFeatureScreenHost(vm: MyFeatureViewModel = hiltViewModel()) {
 Use `logTag()` to create tags and `log()` with lambda messages:
 
 ```kotlin
-import eu.darken.myperm.common.debug.logging.log
-import eu.darken.myperm.common.debug.logging.logTag
-import eu.darken.myperm.common.debug.logging.Logging.Priority.*
+import com.servalabs.perms.common.debug.logging.log
+import com.servalabs.perms.common.debug.logging.logTag
+import com.servalabs.perms.common.debug.logging.Logging.Priority.*
 
 companion object {
     private val TAG = logTag("Apps", "Repo")

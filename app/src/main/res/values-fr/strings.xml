@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Aide</string>
     <string name="general_error_label">Erreur</string>
     <string name="general_share_action">Partager</string>
@@ -519,7 +519,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP : …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dmin %2$ds</string>
     <string name="debug_debuglog_screen_duration_s">%1$ds</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Question</string>
     <string name="contact_email_tag_feature">Fonctionnalité</string>
@@ -527,8 +527,8 @@
     <string name="contact_email_section_expected_behavior">--- Comportement attendu ---</string>
     <string name="contact_email_section_device_info">--- Infos sur l\'appareil ---</string>
     <string name="onboarding_body1">Cette appli vous aide à parcourir les applis installées et à découvrir les autorisations.</string>
-    <string name="onboarding_body2">Permission Pilot recueille des renseignements sur les applications installées afin de répertorier vos applis et de recouper leurs autorisations lors de l’utilisation de cette application.</string>
-    <string name="onboarding_body3">Permission Pilot n’affiche aucune publicité et ne traite les données que localement.</string>
+    <string name="onboarding_body2">Serva Perms recueille des renseignements sur les applications installées afin de répertorier vos applis et de recouper leurs autorisations lors de l’utilisation de cette application.</string>
+    <string name="onboarding_body3">Serva Perms n’affiche aucune publicité et ne traite les données que localement.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">Mode du thème</string>
     <string name="ui_theme_mode_system_label">Système</string>
@@ -554,7 +554,7 @@
     <string name="upgrade_benefit_support">Soutenir le développeur</string>
     <string name="upgrade_benefit_manifest_viewer">Parcourir les manifestes bruts des applis</string>
     <string name="general_upgrade_action">Surclasser</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Observateur</string>
     <string name="watcher_dashboard_feature_title">Observateur de permissions</string>

@@ -1,0 +1,257 @@
+package com.servalabs.perms.settings.ui.general
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.twotone.ColorLens
+import androidx.compose.material.icons.twotone.Contrast
+import androidx.compose.material.icons.twotone.DarkMode
+import androidx.compose.material.icons.twotone.Lock
+import androidx.compose.material.icons.twotone.Speed
+import androidx.compose.material3.FilledTonalButton
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.servalabs.perms.R
+import com.servalabs.perms.common.compose.LabeledOption
+import com.servalabs.perms.common.compose.Preview2
+import com.servalabs.perms.common.compose.PreviewWrapper
+import com.servalabs.perms.common.compose.SingleChoiceSortDialog
+import com.servalabs.perms.common.error.ErrorEventHandler
+import com.servalabs.perms.common.navigation.LocalNavigationController
+import com.servalabs.perms.common.navigation.NavigationEventHandler
+import com.servalabs.perms.common.settings.SettingsBaseItem
+import com.servalabs.perms.common.settings.SettingsCategoryHeader
+import com.servalabs.perms.common.settings.SettingsDivider
+import com.servalabs.perms.common.settings.ThemeColorSelectorDialog
+import com.servalabs.perms.common.theming.LocalIsDynamicColorActive
+import com.servalabs.perms.common.theming.ThemeColor
+import com.servalabs.perms.common.theming.ThemeMode
+import com.servalabs.perms.common.theming.ThemeStyle
+
+@Composable
+fun GeneralSettingsScreenHost() {
+    val navCtrl = LocalNavigationController.current
+    val vm: GeneralSettingsViewModel = hiltViewModel()
+
+    ErrorEventHandler(vm)
+    NavigationEventHandler(vm)
+
+    val themeMode by vm.themeMode.collectAsState(initial = ThemeMode.SYSTEM)
+    val themeStyle by vm.themeStyle.collectAsState(initial = ThemeStyle.DEFAULT)
+    val themeColor by vm.themeColor.collectAsState(initial = ThemeColor.BLUE)
+    val isDynamicColorActive = LocalIsDynamicColorActive.current
+    val isPro by vm.isPro.collectAsState()
+    val ipcParallelisation by vm.ipcParallelisation.collectAsState(initial = 0)
+
+    GeneralSettingsScreen(
+        onBack = { navCtrl?.up() },
+        themeMode = themeMode,
+        themeStyle = themeStyle,
+        themeColor = themeColor,
+        isDynamicColorActive = isDynamicColorActive,
+        isPro = isPro,
+        ipcParallelisation = ipcParallelisation,
+        onThemeModeSelected = { vm.setThemeMode(it) },
+        onThemeStyleSelected = { vm.setThemeStyle(it) },
+        onThemeColorSelected = { vm.setThemeColor(it) },
+        onIpcParallelisationSelected = { vm.setIpcParallelisation(it) },
+        onUpgrade = { vm.onUpgrade() },
+    )
+}
+
+private enum class SettingsDialog { THEME_MODE, THEME_STYLE, THEME_COLOR, SCAN_SPEED }
+
+@Composable
+fun GeneralSettingsScreen(
+    onBack: () -> Unit,
+    themeMode: ThemeMode = ThemeMode.SYSTEM,
+    themeStyle: ThemeStyle = ThemeStyle.DEFAULT,
+    themeColor: ThemeColor = ThemeColor.BLUE,
+    isDynamicColorActive: Boolean = false,
+    isPro: Boolean = true,
+    ipcParallelisation: Int = 0,
+    onThemeModeSelected: (ThemeMode) -> Unit = {},
+    onThemeStyleSelected: (ThemeStyle) -> Unit = {},
+    onThemeColorSelected: (ThemeColor) -> Unit = {},
+    onIpcParallelisationSelected: (Int) -> Unit = {},
+    onUpgrade: () -> Unit = {},
+) {
+    var openDialog by remember { mutableStateOf<SettingsDialog?>(null) }
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(text = stringResource(R.string.general_settings_label)) },
+                navigationIcon = {
+                    IconButton(onClick = onBack) {
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
+                    }
+                },
+            )
+        }
+    ) { innerPadding ->
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(innerPadding)
+                .verticalScroll(rememberScrollState()),
+        ) {
+            SettingsCategoryHeader(
+                text = stringResource(R.string.settings_category_appearance_label),
+                action = if (!isPro) {{
+                    FilledTonalButton(onClick = onUpgrade) {
+                        Icon(
+                            Icons.TwoTone.Lock,
+                            contentDescription = null,
+                            modifier = Modifier.size(16.dp),
+                        )
+                        Text(
+                            text = stringResource(R.string.upgrade_required_subtitle),
+                            modifier = Modifier.padding(start = 6.dp),
+                            style = MaterialTheme.typography.labelMedium,
+                        )
+                    }
+                }} else null,
+            )
+
+            SettingsBaseItem(
+                title = stringResource(R.string.ui_theme_mode_label),
+                subtitle = stringResource(themeMode.labelRes),
+                icon = Icons.TwoTone.DarkMode,
+                enabled = isPro,
+                onClick = { openDialog = SettingsDialog.THEME_MODE },
+            )
+            SettingsDivider()
+            SettingsBaseItem(
+                title = stringResource(R.string.ui_theme_style_label),
+                subtitle = stringResource(themeStyle.labelRes),
+                icon = Icons.TwoTone.Contrast,
+                enabled = isPro,
+                onClick = { openDialog = SettingsDialog.THEME_STYLE },
+            )
+            SettingsDivider()
+
+            val colorEnabled = isPro && !isDynamicColorActive
+            SettingsBaseItem(
+                title = stringResource(R.string.ui_theme_color_label),
+                subtitle = if (!isDynamicColorActive) {
+                    stringResource(themeColor.labelRes)
+                } else {
+                    stringResource(R.string.ui_theme_color_disabled_subtitle)
+                },
+                icon = Icons.TwoTone.ColorLens,
+                enabled = colorEnabled,
+                onClick = { openDialog = SettingsDialog.THEME_COLOR },
+            )
+
+            SettingsCategoryHeader(
+                text = stringResource(R.string.settings_category_advanced_label),
+                action = if (!isPro) {{
+                    FilledTonalButton(onClick = onUpgrade) {
+                        Icon(
+                            Icons.TwoTone.Lock,
+                            contentDescription = null,
+                            modifier = Modifier.size(16.dp),
+                        )
+                        Text(
+                            text = stringResource(R.string.upgrade_required_subtitle),
+                            modifier = Modifier.padding(start = 6.dp),
+                            style = MaterialTheme.typography.labelMedium,
+                        )
+                    }
+                }} else null,
+            )
+
+            SettingsBaseItem(
+                title = stringResource(R.string.general_settings_scan_speed_label),
+                subtitle = when (ipcParallelisation) {
+                    1 -> stringResource(R.string.general_settings_scan_speed_1)
+                    2 -> stringResource(R.string.general_settings_scan_speed_2)
+                    3 -> stringResource(R.string.general_settings_scan_speed_3)
+                    4 -> stringResource(R.string.general_settings_scan_speed_4)
+                    else -> stringResource(R.string.general_settings_scan_speed_auto)
+                },
+                icon = Icons.TwoTone.Speed,
+                enabled = isPro,
+                onClick = { openDialog = SettingsDialog.SCAN_SPEED },
+            )
+        }
+    }
+
+    when (openDialog) {
+        SettingsDialog.THEME_MODE -> SingleChoiceSortDialog(
+            title = stringResource(R.string.ui_theme_mode_label),
+            options = ThemeMode.entries.map { LabeledOption(it, it.labelRes) },
+            selected = themeMode,
+            onSelect = {
+                onThemeModeSelected(it)
+                openDialog = null
+            },
+            onDismiss = { openDialog = null },
+        )
+
+        SettingsDialog.THEME_STYLE -> SingleChoiceSortDialog(
+            title = stringResource(R.string.ui_theme_style_label),
+            options = ThemeStyle.entries.map { LabeledOption(it, it.labelRes) },
+            selected = themeStyle,
+            onSelect = {
+                onThemeStyleSelected(it)
+                openDialog = null
+            },
+            onDismiss = { openDialog = null },
+        )
+
+        SettingsDialog.THEME_COLOR -> ThemeColorSelectorDialog(
+            selectedColor = themeColor,
+            onColorSelected = {
+                onThemeColorSelected(it)
+                openDialog = null
+            },
+            onDismiss = { openDialog = null },
+        )
+
+        SettingsDialog.SCAN_SPEED -> SingleChoiceSortDialog(
+            title = stringResource(R.string.general_settings_scan_speed_label),
+            options = listOf(
+                LabeledOption(0, R.string.general_settings_scan_speed_auto),
+                LabeledOption(1, R.string.general_settings_scan_speed_1),
+                LabeledOption(2, R.string.general_settings_scan_speed_2),
+                LabeledOption(3, R.string.general_settings_scan_speed_3),
+                LabeledOption(4, R.string.general_settings_scan_speed_4),
+            ),
+            selected = ipcParallelisation,
+            onSelect = {
+                onIpcParallelisationSelected(it)
+                openDialog = null
+            },
+            onDismiss = { openDialog = null },
+        )
+
+        null -> {}
+    }
+}
+
+@Preview2
+@Composable
+private fun GeneralSettingsScreenPreview() = PreviewWrapper {
+    GeneralSettingsScreen(onBack = {})
+}

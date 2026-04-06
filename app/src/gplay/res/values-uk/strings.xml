@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">Сервіси Google Play недоступні.</string>
     <string name="upgrades_no_purchases_found_check_account">Покупки не знайдено. Ви використовуєте правильний обліковий запис?</string>
-    <string name="upgrade_screen_preamble">Permission Pilot без реклами і поважає вашу приватність. Оновлення підтримує подальшу розробку.</string>
+    <string name="upgrade_screen_preamble">Serva Perms без реклами і поважає вашу приватність. Оновлення підтримує подальшу розробку.</string>
     <string name="upgrade_screen_subscription_trial_action">Випробувати пробний період</string>
     <string name="upgrade_screen_subscription_action">Підписатися</string>
     <string name="upgrade_screen_subscription_action_hint">%s/місяць, скасуйте будь-коли</string>

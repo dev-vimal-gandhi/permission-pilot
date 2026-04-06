@@ -564,7 +564,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dм %2$dс</string>
     <string name="debug_debuglog_screen_duration_s">%1$dс</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Пытанне</string>
     <string name="contact_email_tag_feature">Функцыя</string>
@@ -599,7 +599,7 @@
     <string name="upgrade_benefit_support">Падтрымаць разпрацоўшчыка</string>
     <string name="upgrade_benefit_manifest_viewer">Прагляд зыходных маніфестаў праграм</string>
     <string name="general_upgrade_action">Абнавіць</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Назіральнік</string>
     <string name="watcher_dashboard_feature_title">Назіральнік дазволаў</string>

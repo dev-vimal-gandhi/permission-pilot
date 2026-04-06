@@ -518,7 +518,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dd %2$ds</string>
     <string name="debug_debuglog_screen_duration_s">%1$ds</string>
-    <string name="support_debuglog_share_subject">Permission Pilot Sazlama Jurnalı - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms Sazlama Jurnalı - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Sual</string>
     <string name="contact_email_tag_feature">Xösusiləşdirmə</string>
@@ -553,7 +553,7 @@
     <string name="upgrade_benefit_support">Geliştiricini dəstəklə</string>
     <string name="upgrade_benefit_manifest_viewer">Tətbiqin xam manifestalarına baxmaq</string>
     <string name="general_upgrade_action">Yüksəlt</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Nəzarətçi</string>
     <string name="watcher_dashboard_feature_title">İcazə Nəzarətçisi</string>

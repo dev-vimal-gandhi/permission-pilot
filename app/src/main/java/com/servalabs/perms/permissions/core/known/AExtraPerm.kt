@@ -1,0 +1,44 @@
+package com.servalabs.perms.permissions.core.known
+
+import androidx.annotation.StringRes
+import com.servalabs.perms.R
+import com.servalabs.perms.permissions.core.Permission
+import com.servalabs.perms.permissions.core.PermissionGroup
+import com.servalabs.perms.permissions.core.features.NotNormalPerm
+import com.servalabs.perms.permissions.core.features.PermissionTag
+import com.servalabs.perms.permissions.core.features.SpecialAccess
+import com.servalabs.perms.permissions.core.grpIds
+import kotlin.reflect.full.isSubclassOf
+
+sealed class AExtraPerm constructor(val id: Permission.Id) {
+
+    @get:StringRes open val labelRes: Int? = null
+    @get:StringRes open val descriptionRes: Int? = null
+
+    open val groupIds: Set<PermissionGroup.Id> = grpIds(APermGrp.Other)
+    open val tags: Collection<PermissionTag> = emptySet()
+
+    constructor(rawPermissionId: String) : this(Permission.Id(rawPermissionId))
+
+    object PICTURE_IN_PICTURE : AExtraPerm("android:picture_in_picture") {
+        override val labelRes: Int = R.string.permission_picture_in_picture_label
+        override val groupIds: Set<PermissionGroup.Id> = grpIds(APermGrp.Other)
+        override val tags = setOf(NotNormalPerm, SpecialAccess)
+    }
+
+    object LEGACY_STORAGE : AExtraPerm("android:legacy_storage") {
+        override val labelRes: Int = R.string.permission_legacy_storage_label
+        override val descriptionRes: Int = R.string.permission_legacy_storage_description
+        override val groupIds: Set<PermissionGroup.Id> = grpIds(APermGrp.Files)
+        override val tags = setOf(NotNormalPerm, SpecialAccess)
+    }
+
+    companion object {
+        val values: List<AExtraPerm> by lazy {
+            AExtraPerm::class.nestedClasses
+                .filter { clazz -> clazz.isSubclassOf(AExtraPerm::class) }
+                .map { clazz -> clazz.objectInstance }
+                .filterIsInstance<AExtraPerm>()
+        }
+    }
+}

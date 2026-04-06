@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">सहायता</string>
     <string name="general_error_label">त्रुटि</string>
     <string name="general_share_action">साझा करें</string>
@@ -518,7 +518,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dम %2$dस</string>
     <string name="debug_debuglog_screen_duration_s">%1$dस</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">प्रश्न</string>
     <string name="contact_email_tag_feature">फ़ीचर</string>
@@ -526,8 +526,8 @@
     <string name="contact_email_section_expected_behavior">--- अपेक्षित व्यवहार ---</string>
     <string name="contact_email_section_device_info">--- डिवाइस जानकारी ---</string>
     <string name="onboarding_body1">यह ऐप आपको इंस्टॉल किए गए ऐप्स को नेविगेट करने और अनुमतियों की खोज करने में मदद करता है।</string>
-    <string name="onboarding_body2">Permission Pilot इंस्टॉल किए गए ऐप्स की जानकारी एकत्र करता है ताकि इस एप्लिकेशन का उपयोग करते समय आपके ऐप्स की सूची और उनकी अनुमतियों को क्रॉस-रेफ़रेंस करना संभव हो।</string>
-    <string name="onboarding_body3">Permission Pilot में कोई विज्ञापन नहीं है और यह केवल स्थानीय रूप से डेटा प्रोसेस करता है।</string>
+    <string name="onboarding_body2">Serva Perms इंस्टॉल किए गए ऐप्स की जानकारी एकत्र करता है ताकि इस एप्लिकेशन का उपयोग करते समय आपके ऐप्स की सूची और उनकी अनुमतियों को क्रॉस-रेफ़रेंस करना संभव हो।</string>
+    <string name="onboarding_body3">Serva Perms में कोई विज्ञापन नहीं है और यह केवल स्थानीय रूप से डेटा प्रोसेस करता है।</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">थीम मोड</string>
     <string name="ui_theme_mode_system_label">सिस्टम</string>
@@ -553,7 +553,7 @@
     <string name="upgrade_benefit_support">डेवलपर का समर्थन करें</string>
     <string name="upgrade_benefit_manifest_viewer">कच्चे ऐप मेनिफेस्ट ब्राउज़ करें</string>
     <string name="general_upgrade_action">उन्नत करें</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">वॉचर</string>
     <string name="watcher_dashboard_feature_title">अनुमति वॉचर</string>

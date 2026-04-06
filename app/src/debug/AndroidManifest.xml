@@ -3,7 +3,7 @@
 
     <application>
         <activity
-            android:name="eu.darken.myperm.HiltTestActivity"
+            android:name="com.servalabs.perms.HiltTestActivity"
             android:exported="false" />
     </application>
 

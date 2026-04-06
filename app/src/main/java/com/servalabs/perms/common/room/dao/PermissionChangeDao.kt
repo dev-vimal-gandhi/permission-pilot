@@ -1,0 +1,48 @@
+package com.servalabs.perms.common.room.dao
+
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
+import com.servalabs.perms.apps.core.Pkg
+import com.servalabs.perms.common.room.entity.PermissionChangeEntity
+import kotlinx.coroutines.flow.Flow
+
+@Dao
+interface PermissionChangeDao {
+
+    @Insert
+    suspend fun insert(entity: PermissionChangeEntity): Long
+
+    @Query("SELECT * FROM permission_change_reports WHERE id = :id")
+    suspend fun getById(id: Long): PermissionChangeEntity?
+
+    @Query("SELECT * FROM permission_change_reports ORDER BY detectedAt DESC")
+    fun getAll(): Flow<List<PermissionChangeEntity>>
+
+    @Query("SELECT * FROM permission_change_reports WHERE isSeen = 0 ORDER BY detectedAt DESC")
+    fun getUnseen(): Flow<List<PermissionChangeEntity>>
+
+    @Query("SELECT COUNT(*) FROM permission_change_reports")
+    fun getTotalCount(): Flow<Int>
+
+    @Query("SELECT COUNT(*) FROM permission_change_reports WHERE isSeen = 0")
+    fun getUnseenCount(): Flow<Int>
+
+    @Query("UPDATE permission_change_reports SET isSeen = 1 WHERE id = :id")
+    suspend fun markSeen(id: Long)
+
+    @Query("UPDATE permission_change_reports SET isSeen = 1")
+    suspend fun markAllSeen()
+
+    @Query("DELETE FROM permission_change_reports WHERE id = :id")
+    suspend fun deleteById(id: Long)
+
+    @Query("DELETE FROM permission_change_reports")
+    suspend fun deleteAll()
+
+    @Query("DELETE FROM permission_change_reports WHERE detectedAt < :epochMs")
+    suspend fun deleteOlderThan(epochMs: Long)
+
+    @Query("SELECT EXISTS(SELECT 1 FROM permission_change_reports WHERE packageName = :pkgName AND userHandleId = :userHandleId AND sourceSnapshotId = :snapshotId)")
+    suspend fun existsByPackageAndSnapshot(pkgName: Pkg.Name, userHandleId: Int, snapshotId: String): Boolean
+}

@@ -1,4 +1,4 @@
-<i>Permission Pilot</i> on uudenlainen sovellus, joka auttaa sinua tarkastelemaan sovelluksia ja niiden käyttöoikeuksia.
+<i>Serva Perms</i> on uudenlainen sovellus, joka auttaa sinua tarkastelemaan sovelluksia ja niiden käyttöoikeuksia.
 
 Jokaisen Android-päivityksen myötä käyttöoikeudet muuttuvat monimutkaisemmiksi.
 Android näyttää käyttöoikeudet useissa eri paikoissa, mikä ei helpota niiden tarkastelua:
@@ -8,7 +8,7 @@ Android näyttää käyttöoikeudet useissa eri paikoissa, mikä ei helpota niid
 * Käyttöoikeuksien hallinta
 * ja lisää...
 
-<i>Permission Pilot</i> listaa kaikki käyttöoikeudet yhteen paikkaan, antaen sinulle kokonaiskuvan sovelluksen käyttöoikeuksista.
+<i>Serva Perms</i> listaa kaikki käyttöoikeudet yhteen paikkaan, antaen sinulle kokonaiskuvan sovelluksen käyttöoikeuksista.
 
 Käytettävissä on kaksi näkymää: voit joko tarkastella kaikkia sovelluksen pyytämiä käyttöoikeuksia tai kaikkia sovelluksia, jotka pyytävät tiettyä käyttöoikeutta.
 

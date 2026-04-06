@@ -518,7 +518,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dደእ %2$dʼ</string>
     <string name="debug_debuglog_screen_duration_s">%1$dʼ</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">ጥያቄ</string>
     <string name="contact_email_tag_feature">ባህሪያ</string>
@@ -526,8 +526,8 @@
     <string name="contact_email_section_expected_behavior">--- የተገመተ ዘሮታ ---</string>
     <string name="contact_email_section_device_info">--- የመሳሪያ መረጃ ---</string>
     <string name="onboarding_body1">ይህ መተግበሪያ የተጫኙ መተግበሪያዎችን እና ፈቃዶቻቸውን ማወቅና ማሳየት ይረዳል።</string>
-    <string name="onboarding_body2">Permission Pilot የተጫኙ መተግበሪያዎች መረጃ ይሰበስባል። ይህ የፈቃዶችን ቅዱስ ዝርዝር ማየት ያስችላል።</string>
-    <string name="onboarding_body3">Permission Pilot ማንኛውንም ማስታወቂያ የለውምና ሁሉንም ውሂብ በኪነ ምሁር ይተግበራል።</string>
+    <string name="onboarding_body2">Serva Perms የተጫኙ መተግበሪያዎች መረጃ ይሰበስባል። ይህ የፈቃዶችን ቅዱስ ዝርዝር ማየት ያስችላል።</string>
+    <string name="onboarding_body3">Serva Perms ማንኛውንም ማስታወቂያ የለውምና ሁሉንም ውሂብ በኪነ ምሁር ይተግበራል።</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">የወጭታ ሁነታ</string>
     <string name="ui_theme_mode_system_label">ሲስተም</string>
@@ -553,7 +553,7 @@
     <string name="upgrade_benefit_support">ደቀናዉን ይደግፉ</string>
     <string name="upgrade_benefit_manifest_viewer">ደርቋል የመተግበሪያ ማኒፌስቶችን ከስዘ</string>
     <string name="general_upgrade_action">አሻሽል</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">ባለቸኛ</string>
     <string name="watcher_dashboard_feature_title">የፍቃድ ባለቸኛ</string>

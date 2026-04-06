@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Ajutor</string>
     <string name="general_error_label">Eroare</string>
     <string name="general_share_action">Partajează</string>
@@ -541,7 +541,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dm %2$ds</string>
     <string name="debug_debuglog_screen_duration_s">%1$ds</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Întrebări</string>
     <string name="contact_email_tag_feature">Funcționalitate</string>
@@ -549,8 +549,8 @@
     <string name="contact_email_section_expected_behavior">--- Comportament aşteptat ---</string>
     <string name="contact_email_section_device_info">--- Informații dispozitiv ---</string>
     <string name="onboarding_body1">Această aplicație vă ajută să navigați prin aplicațiile instalate și să descoperiți permisiunile.</string>
-    <string name="onboarding_body2">Permission Pilot colectează informații despre aplicațiile instalate pentru a permite listarea aplicațiilor și compararea permisiunilor acestora când utilizați această aplicație.</string>
-    <string name="onboarding_body3">Permission Pilot nu are reclame și procesează datele doar local.</string>
+    <string name="onboarding_body2">Serva Perms colectează informații despre aplicațiile instalate pentru a permite listarea aplicațiilor și compararea permisiunilor acestora când utilizați această aplicație.</string>
+    <string name="onboarding_body3">Serva Perms nu are reclame și procesează datele doar local.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">Mod temă</string>
     <string name="ui_theme_mode_system_label">Sistem</string>
@@ -576,7 +576,7 @@
     <string name="upgrade_benefit_support">Sprijină dezvoltatorul</string>
     <string name="upgrade_benefit_manifest_viewer">Răsfoiește manifestele brute ale aplicațiilor</string>
     <string name="general_upgrade_action">Actualizează</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Watcher</string>
     <string name="watcher_dashboard_feature_title">Permission Watcher</string>

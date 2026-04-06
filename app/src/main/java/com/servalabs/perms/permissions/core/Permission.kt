@@ -1,0 +1,121 @@
+package com.servalabs.perms.permissions.core
+
+import android.content.Context
+import android.content.pm.PackageManager
+import android.graphics.drawable.Drawable
+import android.os.Parcelable
+import com.servalabs.perms.apps.core.Pkg
+import com.servalabs.perms.apps.core.getPermissionInfo2
+import com.servalabs.perms.permissions.core.features.*
+import com.servalabs.perms.permissions.core.known.AExtraPerm
+import com.servalabs.perms.permissions.core.known.APerm
+import com.servalabs.perms.permissions.core.known.APermGrp
+import kotlinx.parcelize.Parcelize
+
+interface Permission {
+    val id: Id
+
+    val tags: Collection<PermissionTag>
+        get() = emptySet()
+    val groupIds: Collection<PermissionGroup.Id>
+        get() = emptySet()
+
+    fun getLabel(context: Context): String? {
+
+        APerm.values.singleOrNull { it.id == id }
+            ?.labelRes
+            ?.let { return context.getString(it) }
+
+        AExtraPerm.values.singleOrNull { it.id == id }
+            ?.labelRes
+            ?.let { return context.getString(it) }
+
+        val pm = context.packageManager
+
+        try {
+            pm
+                .getPermissionInfo2(id, PackageManager.GET_META_DATA)
+                ?.takeIf { it.labelRes != 0 }
+                ?.loadLabel(pm)
+                ?.takeIf { it.isNotEmpty() && it != id.value }
+                ?.let { return it.toString() }
+        } catch (_: Exception) {
+            // Package resources may be unavailable (uninstalled, split APK, secondary profile)
+        }
+
+        return null
+    }
+
+    fun getDescription(context: Context): String? {
+
+        APerm.values.singleOrNull { it.id == id }
+            ?.descriptionRes
+            ?.let { return context.getString(it) }
+
+        AExtraPerm.values.singleOrNull { it.id == id }
+            ?.descriptionRes
+            ?.let { return context.getString(it) }
+
+        val pm = context.packageManager
+
+        try {
+            pm
+                .getPermissionInfo2(id, PackageManager.GET_META_DATA)
+                ?.takeIf { it.labelRes != 0 }
+                ?.loadDescription(pm)
+                ?.takeIf { it.isNotEmpty() && it != id.value }
+                ?.let { return it.toString() }
+        } catch (_: Exception) {
+            // Package resources may be unavailable (uninstalled, split APK, secondary profile)
+        }
+
+        return null
+    }
+
+    fun getIcon(context: Context): Drawable? {
+        val pm = context.packageManager
+
+        try {
+            pm
+                .getPermissionInfo2(id, PackageManager.GET_META_DATA)
+                ?.takeIf { it.icon != 0 }
+                ?.loadIcon(pm)
+                ?.let { return it }
+        } catch (_: Exception) {
+            // Package resources may be unavailable (uninstalled, split APK, secondary profile)
+        }
+
+        return null
+    }
+
+    fun getAction(context: Context, pkg: Pkg? = null): PermissionAction {
+        when {
+            tags.contains(RuntimeGrant) -> PermissionAction.Runtime(this, pkg)
+            tags.contains(SpecialAccess) -> PermissionAction.SpecialAccess(this, pkg)
+            else -> null
+        }?.let { return it }
+
+        return PermissionAction.None(this, pkg)
+    }
+
+    @Parcelize
+    data class Id(val value: String) : Parcelable
+}
+
+
+fun Permission.Id.toKnownPermission(): APerm? =
+    APerm.values.singleOrNull { it.id == this@toKnownPermission }
+
+fun Permission.getGroup(): Collection<APermGrp> =
+    groupIds.map { grpId -> APermGrp.values.single { it.id == grpId } }
+
+
+fun Permission.Id.getGroupIds(): Collection<PermissionGroup.Id> =
+    APerm.values.singleOrNull { it.id == this }?.groupIds ?: emptySet()
+
+
+fun Permission.getGroupIds(): Collection<PermissionGroup.Id> =
+    APerm.values.singleOrNull { it.id == this.id }?.groupIds ?: emptySet()
+
+val Permission.isHighlighted
+    get() = this.tags.any { it is Highlighted }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">ヘルプ</string>
     <string name="general_error_label">エラー</string>
     <string name="general_share_action">共有</string>
@@ -495,7 +495,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$d分%2$d秒</string>
     <string name="debug_debuglog_screen_duration_s">%1$d秒</string>
-    <string name="support_debuglog_share_subject">Permission Pilot デバッグログ - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms デバッグログ - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">質問</string>
     <string name="contact_email_tag_feature">機能</string>
@@ -503,8 +503,8 @@
     <string name="contact_email_section_expected_behavior">--- 期待する動作 ---</string>
     <string name="contact_email_section_device_info">--- デバイス情報 ---</string>
     <string name="onboarding_body1">このアプリは、インストールされたアプリケーションをナビゲートし、権限を発見するのに役立ちます。</string>
-    <string name="onboarding_body2">Permission Pilotは、このアプリケーションを使用する際にアプリをリストし、その権限をクロスリファレンスすることを可能にするために、インストールされたアプリケーション情報を収集します。</string>
-    <string name="onboarding_body3">Permission Pilotには広告がなく、データはローカルでのみ処理されます。</string>
+    <string name="onboarding_body2">Serva Permsは、このアプリケーションを使用する際にアプリをリストし、その権限をクロスリファレンスすることを可能にするために、インストールされたアプリケーション情報を収集します。</string>
+    <string name="onboarding_body3">Serva Permsには広告がなく、データはローカルでのみ処理されます。</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">テーマモード</string>
     <string name="ui_theme_mode_system_label">システム</string>
@@ -530,7 +530,7 @@
     <string name="upgrade_benefit_support">開発者をサポート</string>
     <string name="upgrade_benefit_manifest_viewer">アプリの生のマニフェストを閲覧</string>
     <string name="general_upgrade_action">アップグレード</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">ウォッチャー</string>
     <string name="watcher_dashboard_feature_title">権限ウォッチャー</string>

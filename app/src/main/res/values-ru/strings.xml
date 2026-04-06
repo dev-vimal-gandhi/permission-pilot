@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Помощь</string>
     <string name="general_error_label">Ошибка</string>
     <string name="general_share_action">Поделиться</string>
@@ -564,7 +564,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dм %2$dс</string>
     <string name="debug_debuglog_screen_duration_s">%1$dс</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Вопрос</string>
     <string name="contact_email_tag_feature">Функция</string>
@@ -572,8 +572,8 @@
     <string name="contact_email_section_expected_behavior">--- Ожидаемое поведение ---</string>
     <string name="contact_email_section_device_info">--- Инфо об устройстве ---</string>
     <string name="onboarding_body1">Это приложение поможет вам навигировать по установленным приложениям и изучать разрешения.</string>
-    <string name="onboarding_body2">Permission Pilot собирает информацию об установленных приложениях, чтобы отображать ваши приложения и сопоставлять их разрешения при использовании данного приложения.</string>
-    <string name="onboarding_body3">Permission Pilot не содержит рекламы и обрабатывает данные только локально.</string>
+    <string name="onboarding_body2">Serva Perms собирает информацию об установленных приложениях, чтобы отображать ваши приложения и сопоставлять их разрешения при использовании данного приложения.</string>
+    <string name="onboarding_body3">Serva Perms не содержит рекламы и обрабатывает данные только локально.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">Режим темы</string>
     <string name="ui_theme_mode_system_label">Системная</string>
@@ -599,7 +599,7 @@
     <string name="upgrade_benefit_support">Поддержать разработчика</string>
     <string name="upgrade_benefit_manifest_viewer">Просмотр разрых манифестов приложений</string>
     <string name="general_upgrade_action">Обновить</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Наблюдатель</string>
     <string name="watcher_dashboard_feature_title">Наблюдатель разрешений</string>

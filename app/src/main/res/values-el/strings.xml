@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Βοήθεια</string>
     <string name="general_error_label">Σφάλμα</string>
     <string name="general_share_action">Κοινοποίηση</string>
@@ -518,7 +518,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dλ %2$dδ</string>
     <string name="debug_debuglog_screen_duration_s">%1$dδ</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Ερώτηση</string>
     <string name="contact_email_tag_feature">Χαρακτηριστική</string>
@@ -526,8 +526,8 @@
     <string name="contact_email_section_expected_behavior">--- Αναμενόμενη Συμπεριφορά ---</string>
     <string name="contact_email_section_device_info">--- Στοιχεία Συσκευής ---</string>
     <string name="onboarding_body1">Αυτή η εφαρμογή σας βοηθά να πλοηγηθείτε στις εγκατεστημένες εφαρμογές και να ανακαλύψετε τις άδειές τους.</string>
-    <string name="onboarding_body2">Το Permission Pilot συλλέγει πληροφορίες για τις εγκατεστημένες εφαρμογές, ώστε να μπορεί να τις εμφανίζει και να συσχετίζει τις άδειές τους κατά τη χρήση της εφαρμογής.</string>
-    <string name="onboarding_body3">Το Permission Pilot δεν έχει διαφημίσεις και επεξεργάζεται δεδομένα μόνο τοπικά.</string>
+    <string name="onboarding_body2">Το Serva Perms συλλέγει πληροφορίες για τις εγκατεστημένες εφαρμογές, ώστε να μπορεί να τις εμφανίζει και να συσχετίζει τις άδειές τους κατά τη χρήση της εφαρμογής.</string>
+    <string name="onboarding_body3">Το Serva Perms δεν έχει διαφημίσεις και επεξεργάζεται δεδομένα μόνο τοπικά.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">Λειτουργία θέματος</string>
     <string name="ui_theme_mode_system_label">Σύστημα</string>
@@ -553,7 +553,7 @@
     <string name="upgrade_benefit_support">Υποστήριξη του δημιουργού</string>
     <string name="upgrade_benefit_manifest_viewer">Περιήγηση σε raw manifests εφαρμογών</string>
     <string name="general_upgrade_action">Αναβάθμιση</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Παρατηρητής</string>
     <string name="watcher_dashboard_feature_title">Παρατηρητής Αδειών</string>

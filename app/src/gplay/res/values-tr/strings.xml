@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">Google Play hizmetleri kullanılamıyor.</string>
     <string name="upgrades_no_purchases_found_check_account">Satın alma bulunamadı. Doğru hesabı mı kullanıyorsunuz?</string>
-    <string name="upgrade_screen_preamble">Permission Pilot reklamsız ve gizliliğinize saygı gösteriyor. Yükseltme yapılması, sürekli geliştirmeyi destekler.</string>
+    <string name="upgrade_screen_preamble">Serva Perms reklamsız ve gizliliğinize saygı gösteriyor. Yükseltme yapılması, sürekli geliştirmeyi destekler.</string>
     <string name="upgrade_screen_subscription_trial_action">Ücretsiz deneme süresini başlatın</string>
     <string name="upgrade_screen_subscription_action">Abone ol</string>
     <string name="upgrade_screen_subscription_action_hint">%s/ay, istediğiniz zaman iptal edin</string>

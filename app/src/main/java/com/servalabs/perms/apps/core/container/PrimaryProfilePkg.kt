@@ -1,0 +1,157 @@
+package com.servalabs.perms.apps.core.container
+
+import android.content.Context
+import android.content.pm.PackageInfo
+import android.content.pm.PackageManager
+import android.content.pm.PermissionInfo
+import android.graphics.drawable.Drawable
+import android.os.Process
+import android.os.UserHandle
+import com.servalabs.perms.apps.core.AppRepo
+import com.servalabs.perms.apps.core.Pkg
+import com.servalabs.perms.apps.core.features.AccessibilityService
+import com.servalabs.perms.apps.core.features.BatteryOptimization
+import com.servalabs.perms.apps.core.features.DeviceAdmin
+import com.servalabs.perms.apps.core.features.Installed
+import com.servalabs.perms.apps.core.features.InstallerInfo
+import com.servalabs.perms.apps.core.features.InternetAccess
+import com.servalabs.perms.apps.core.features.UsesPermission
+import com.servalabs.perms.apps.core.features.determineAccessibilityServices
+import com.servalabs.perms.apps.core.features.determineBatteryOptimization
+import com.servalabs.perms.apps.core.features.determineDeviceAdmins
+import com.servalabs.perms.apps.core.features.determineSpecialPermissions
+import com.servalabs.perms.apps.core.features.getInstallerInfo
+import com.servalabs.perms.apps.core.features.getSpecialPermissionStatuses
+import com.servalabs.perms.apps.core.features.getPermissionUses
+import com.servalabs.perms.apps.core.features.isGranted
+import com.servalabs.perms.apps.core.getIcon2
+import com.servalabs.perms.apps.core.getLabel2
+import com.servalabs.perms.apps.core.isSystemApp
+import com.servalabs.perms.common.IPCFunnel
+import com.servalabs.perms.common.debug.logging.log
+import com.servalabs.perms.permissions.core.Permission
+import com.servalabs.perms.permissions.core.known.APerm
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.sync.Semaphore
+import kotlinx.coroutines.sync.withPermit
+
+class PrimaryProfilePkg(
+    override val packageInfo: PackageInfo,
+    override val userHandle: UserHandle = Process.myUserHandle(),
+    override val installerInfo: InstallerInfo,
+    private val extraPermissions: Collection<UsesPermission>,
+    override val batteryOptimization: BatteryOptimization,
+    override val accessibilityServices: Collection<AccessibilityService>,
+    override val deviceAdmins: Collection<DeviceAdmin>,
+    private val specialPermissionStatuses: Map<Permission.Id, UsesPermission.Status> = emptyMap(),
+) : BasePkg() {
+
+    override val id: Pkg.Id = Pkg.Id(Pkg.Name(packageInfo.packageName), userHandle)
+
+    @Volatile private var _label: String? = null
+    @Volatile private var _resolvingLabel = false
+    override fun getLabel(context: Context): String {
+        _label?.let { return it }
+        if (_resolvingLabel) return id.pkgName.value
+        _resolvingLabel = true
+        try {
+            val newLabel = context.packageManager.getLabel2(id)
+                ?: twins.firstNotNullOfOrNull { it.getLabel(context) }
+                ?: super.getLabel(context)
+                ?: id.pkgName.value
+            _label = newLabel
+            return newLabel
+        } catch (e: Exception) {
+            val fallback = id.pkgName.value
+            _label = fallback
+            return fallback
+        } finally {
+            _resolvingLabel = false
+        }
+    }
+
+    private var _resolvingIcon = false
+    override fun getIcon(context: Context): Drawable? {
+        if (_resolvingIcon) return null
+        _resolvingIcon = true
+        return try {
+            context.packageManager.getIcon2(id)
+                ?: twins.firstNotNullOfOrNull { it.getIcon(context) }
+                ?: super.getIcon(context)
+        } finally {
+            _resolvingIcon = false
+        }
+    }
+
+    override val isSystemApp: Boolean = applicationInfo?.isSystemApp ?: true
+
+    override var siblings: Collection<Pkg> = emptyList()
+    override var twins: Collection<Installed> = emptyList()
+
+    override val requestedPermissions: Collection<UsesPermission> by lazy {
+        val base = packageInfo.requestedPermissions?.mapIndexed { index, permissionId ->
+            val flags = packageInfo.requestedPermissionsFlags?.get(index) ?: 0
+            val permId = Permission.Id(permissionId)
+            val overrideStatus = specialPermissionStatuses[permId]
+            UsesPermission.WithState(id = permId, flags = flags, overrideStatus = overrideStatus)
+        } ?: emptyList()
+
+        val acsPermissions = accessibilityServices.map {
+            UsesPermission.WithState(
+                id = APerm.BIND_ACCESSIBILITY_SERVICE.id,
+                flags = if (it.isEnabled) PackageInfo.REQUESTED_PERMISSION_GRANTED else 0
+            )
+        }
+        val deviceAdminPermissions = deviceAdmins.map {
+            UsesPermission.WithState(
+                id = APerm.BIND_DEVICE_ADMIN.id,
+                flags = if (it.isActive) PackageInfo.REQUESTED_PERMISSION_GRANTED else 0
+            )
+        }
+        base + extraPermissions + acsPermissions + deviceAdminPermissions
+    }
+
+    override val declaredPermissions: Collection<PermissionInfo> by lazy {
+        packageInfo.permissions?.toSet() ?: emptyList()
+    }
+
+    override val internetAccess: InternetAccess by lazy {
+        when {
+            isSystemApp || getPermissionUses(APerm.INTERNET.id).isGranted -> InternetAccess.DIRECT
+            siblings.any { it.getPermissionUses(APerm.INTERNET.id).isGranted } -> InternetAccess.INDIRECT
+            else -> InternetAccess.NONE
+        }
+    }
+
+    override fun toString(): String = "PrimaryProfilePkg(packageName=$packageName, userHandle=$userHandle)"
+}
+
+private suspend fun PackageInfo.toNormalPkg(
+    ipcFunnel: IPCFunnel,
+    activeAdminPkgs: Set<String>,
+): PrimaryProfilePkg = PrimaryProfilePkg(
+    packageInfo = this,
+    installerInfo = getInstallerInfo(ipcFunnel),
+    extraPermissions = determineSpecialPermissions(ipcFunnel),
+    batteryOptimization = determineBatteryOptimization(ipcFunnel),
+    accessibilityServices = determineAccessibilityServices(ipcFunnel),
+    deviceAdmins = determineDeviceAdmins(ipcFunnel, activeAdminPkgs),
+    specialPermissionStatuses = getSpecialPermissionStatuses(ipcFunnel),
+)
+
+suspend fun getNormalPkgs(ipcFunnel: IPCFunnel): Collection<BasePkg> {
+    log(AppRepo.TAG) { "getNormalPkgs()" }
+
+    val activeAdminPkgs = ipcFunnel.devicePolicyManager.getActiveAdmins()
+        ?.map { it.packageName }?.toSet() ?: emptySet()
+
+    val allPackages = ipcFunnel.packageManager.getInstalledPackages(PackageManager.GET_PERMISSIONS)
+    val semaphore = Semaphore(20)
+    return coroutineScope {
+        allPackages
+            .map { pkg -> async { semaphore.withPermit { pkg.toNormalPkg(ipcFunnel, activeAdminPkgs) } } }
+            .awaitAll()
+    }
+}

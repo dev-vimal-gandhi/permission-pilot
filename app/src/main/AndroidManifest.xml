@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
 
     <application
-        android:name="eu.darken.myperm.App"
+        android:name="com.servalabs.perms.App"
         android:allowBackup="true"
         android:largeHeap="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="eu.darken.myperm.main.ui.MainActivity"
+            android:name="com.servalabs.perms.main.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,12 +39,12 @@
         </provider>
 
         <activity
-            android:name="eu.darken.myperm.common.debug.recording.ui.RecorderActivity"
+            android:name="com.servalabs.perms.common.debug.recording.ui.RecorderActivity"
             android:exported="false"
             android:theme="@style/AppTheme" />
 
         <receiver
-            android:name="eu.darken.myperm.watcher.core.PackageChangeReceiver"
+            android:name="com.servalabs.perms.watcher.core.PackageChangeReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
@@ -54,7 +54,7 @@
         </receiver>
 
         <receiver
-            android:name="eu.darken.myperm.watcher.core.WatcherActionReceiver"
+            android:name="com.servalabs.perms.watcher.core.WatcherActionReceiver"
             android:exported="false" />
 
 

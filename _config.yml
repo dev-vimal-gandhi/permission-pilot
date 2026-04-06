@@ -8,7 +8,7 @@ relative_links:
   enabled: true
   collections: true
 
-title: "Permission Pilot"
+title: "Serva Perms"
 description: "An Android permission explorer"
 author: "by Matthias Urhahn"
 

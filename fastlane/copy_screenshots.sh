@@ -10,7 +10,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
-REF_DIR="$PROJECT_DIR/app/src/screenshotTestGplayDebug/reference/eu/darken/myperm/screenshots/PlayStoreScreenshotsKt"
+REF_DIR="$PROJECT_DIR/app/src/screenshotTestGplayDebug/reference/com/servalabs/perms/screenshots/PlayStoreScreenshotsKt"
 FASTLANE_DIR="$PROJECT_DIR/fastlane/metadata/android"
 
 CLEAN=false

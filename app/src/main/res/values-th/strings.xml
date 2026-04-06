@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">ช่วยเหลือ</string>
     <string name="general_error_label">ข้อผิดพลาด</string>
     <string name="general_share_action">แชร์</string>
@@ -495,7 +495,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dน %2$dว</string>
     <string name="debug_debuglog_screen_duration_s">%1$dว</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">คำถาม</string>
     <string name="contact_email_tag_feature">ฟีเจอร์</string>
@@ -503,8 +503,8 @@
     <string name="contact_email_section_expected_behavior">--- พฤติกรรมที่คาดหวัง ---</string>
     <string name="contact_email_section_device_info">--- ข้อมูลอุปกรณ์ ---</string>
     <string name="onboarding_body1">แอปนี้ช่วยคุณในการนำทางแอปพลิเคชันที่ติดตั้งและค้นพบสิทธิ์</string>
-    <string name="onboarding_body2">Permission Pilot รวบรวมข้อมูลแอปพลิเคชันที่ติดตั้งเพื่อให้สามารถแสดงรายการแอปของคุณและอ้างอิงสิทธิ์ข้ามกันเมื่อใช้แอปพลิเคชันนี้</string>
-    <string name="onboarding_body3">Permission Pilot ไม่มีโฆษณาและประมวลผลข้อมูลในเครื่องเท่านั้น</string>
+    <string name="onboarding_body2">Serva Perms รวบรวมข้อมูลแอปพลิเคชันที่ติดตั้งเพื่อให้สามารถแสดงรายการแอปของคุณและอ้างอิงสิทธิ์ข้ามกันเมื่อใช้แอปพลิเคชันนี้</string>
+    <string name="onboarding_body3">Serva Perms ไม่มีโฆษณาและประมวลผลข้อมูลในเครื่องเท่านั้น</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">โหมดธีม</string>
     <string name="ui_theme_mode_system_label">ระบบ</string>
@@ -530,7 +530,7 @@
     <string name="upgrade_benefit_support">สนับสนุนนักพัฒนา</string>
     <string name="upgrade_benefit_manifest_viewer">ดู Manifest ดิบของแอป</string>
     <string name="general_upgrade_action">อัปเกรด</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Watcher</string>
     <string name="watcher_dashboard_feature_title">ตัวตรวจจับสิทธิ์</string>

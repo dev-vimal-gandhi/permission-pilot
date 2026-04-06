@@ -1,0 +1,20 @@
+package com.servalabs.perms.common.upgrade.core
+
+import com.servalabs.perms.common.serialization.InstantSerializer
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+import java.time.Instant
+
+@Serializable
+data class FossUpgrade(
+    @Serializable(with = InstantSerializer::class) val upgradedAt: Instant,
+    val reason: Reason
+) {
+    @Serializable
+    enum class Reason {
+        @SerialName("foss.upgrade.reason.donated") DONATED,
+        @SerialName("foss.upgrade.reason.alreadydonated") ALREADY_DONATED,
+        @SerialName("foss.upgrade.reason.nomoney") NO_MONEY,
+        @SerialName("foss.upgrade.reason.github_sponsors") GITHUB_SPONSORS;
+    }
+}

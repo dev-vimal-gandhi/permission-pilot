@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="upgrade_foss_preamble">Permission Pilot pülsüz və açıq mənbəlidir. Dəstəyiniz bunu belə saxlamaqə kömək edir.</string>
+    <string name="upgrade_foss_preamble">Serva Perms pülsüz və açıq mənbəlidir. Dəstəyiniz bunu belə saxlamaqə kömək edir.</string>
     <string name="upgrade_foss_sponsor_action">Sponsor ol</string>
     <string name="upgrade_foss_sponsor_subtitle">GitHub Sponsors açır</string>
     <string name="upgrade_foss_sponsor_returned_early">Zəhmət olmasa sponsor səhifəsinə bir baxın!</string>

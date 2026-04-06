@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Pomoć</string>
     <string name="general_error_label">Greška</string>
     <string name="general_share_action">Dijeli</string>
@@ -541,7 +541,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$d min %2$d s</string>
     <string name="debug_debuglog_screen_duration_s">%1$d s</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Pitanje</string>
     <string name="contact_email_tag_feature">Značajka</string>
@@ -549,8 +549,8 @@
     <string name="contact_email_section_expected_behavior">--- Očekivano ponašanje ---</string>
     <string name="contact_email_section_device_info">--- Informacije o uređaju ---</string>
     <string name="onboarding_body1">Ova aplikacija vam pomaže navigirati instaliranim aplikacijama i otkrivati dozvole.</string>
-    <string name="onboarding_body2">Permission Pilot prikuplja podatke o instaliranim aplikacijama kako bi omogućio popisivanje vaših aplikacija i unakrsno upućivanje na njihova dopuštenja prilikom korištenja ove aplikacije.</string>
-    <string name="onboarding_body3">Permission Pilot nema oglasa i obrađuje podatke samo lokalno.</string>
+    <string name="onboarding_body2">Serva Perms prikuplja podatke o instaliranim aplikacijama kako bi omogućio popisivanje vaših aplikacija i unakrsno upućivanje na njihova dopuštenja prilikom korištenja ove aplikacije.</string>
+    <string name="onboarding_body3">Serva Perms nema oglasa i obrađuje podatke samo lokalno.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">Način teme</string>
     <string name="ui_theme_mode_system_label">Sustav</string>
@@ -576,7 +576,7 @@
     <string name="upgrade_benefit_support">Podržite programera</string>
     <string name="upgrade_benefit_manifest_viewer">Pregledaj neobrañene manifeste aplikacija</string>
     <string name="general_upgrade_action">Nadogradnja</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Pratič</string>
     <string name="watcher_dashboard_feature_title">Pratič dozvola</string>

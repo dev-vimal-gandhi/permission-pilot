@@ -1,4 +1,4 @@
-<i>Permission Pilot</i> é um novo tipo de ferramenta que ajuda a usuário visualizar quais permissões estão sendo usadas pelos apps - idea surgiu de uma discussão sobre uma funcionalidade para SD Maid.
+<i>Serva Perms</i> é um novo tipo de ferramenta que ajuda a usuário visualizar quais permissões estão sendo usadas pelos apps - idea surgiu de uma discussão sobre uma funcionalidade para SD Maid.
 
 A cada atualização do Android, as permissões ficam mais complexas.
 Atualmente, o Android mostra permissões de apps em 3 lugares diferentes:
@@ -8,7 +8,7 @@ Atualmente, o Android mostra permissões de apps em 3 lugares diferentes:
 * Gerenciar permissões
 * e mais...
 
-<i>Permission Pilot</i> basicamente listará todas as permissões que um app solicitou em um único lugar, dando ao usuário um insight amplo sobre as permissões de apps.
+<i>Serva Perms</i> basicamente listará todas as permissões que um app solicitou em um único lugar, dando ao usuário um insight amplo sobre as permissões de apps.
 
 A fim de controlar ou apenas ver a quais permissões um app tem acesso, o usuário tem que ir para 3 lugares diferentes.
 

@@ -1,6 +1,6 @@
 package testhelper.coroutine
 
-import eu.darken.myperm.common.coroutine.DispatcherProvider
+import com.servalabs.perms.common.coroutine.DispatcherProvider
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 

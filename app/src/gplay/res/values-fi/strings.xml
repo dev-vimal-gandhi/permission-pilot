@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">Google Play -palvelut eivät ole käytettävissä.</string>
     <string name="upgrades_no_purchases_found_check_account">Ostoja ei löytynyt. Käytätkö oikeaa tiliä?</string>
-    <string name="upgrade_screen_preamble">Permission Pilot on mainokseton ja kunnioittaa yksityisyyttäsi. Päivittäminen tukee jatkuvaa kehitystä.</string>
+    <string name="upgrade_screen_preamble">Serva Perms on mainokseton ja kunnioittaa yksityisyyttäsi. Päivittäminen tukee jatkuvaa kehitystä.</string>
     <string name="upgrade_screen_subscription_trial_action">Aloita ilmainen kokeilu</string>
     <string name="upgrade_screen_subscription_action">Tilaa</string>
     <string name="upgrade_screen_subscription_action_hint">%s/kk, peruuta milloin tahansa</string>

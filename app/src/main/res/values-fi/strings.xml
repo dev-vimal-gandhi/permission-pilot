@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Ohje</string>
     <string name="general_error_label">Virhe</string>
     <string name="general_share_action">Jaa</string>
@@ -518,7 +518,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dm %2$ds</string>
     <string name="debug_debuglog_screen_duration_s">%1$ds</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Kysymys</string>
     <string name="contact_email_tag_feature">Ominaisuus</string>
@@ -526,8 +526,8 @@
     <string name="contact_email_section_expected_behavior">--- Odotettu käyttäytyminen ---</string>
     <string name="contact_email_section_device_info">--- Laitetiedot ---</string>
     <string name="onboarding_body1">Tämä sovellus auttaa navigoimaan asennetuissa sovelluksissa ja löytämään käyttöoikeuksia.</string>
-    <string name="onboarding_body2">Permission Pilot kerää asennettujen sovellusten tietoja mahdollistaakseen sovellustesi listaamisen ja niiden käyttöoikeuksien ristiinviittaamisen tätä sovellusta käytettäessä.</string>
-    <string name="onboarding_body3">Permission Pilot ei sisällä mainoksia ja käsittelee tietoja vain paikallisesti.</string>
+    <string name="onboarding_body2">Serva Perms kerää asennettujen sovellusten tietoja mahdollistaakseen sovellustesi listaamisen ja niiden käyttöoikeuksien ristiinviittaamisen tätä sovellusta käytettäessä.</string>
+    <string name="onboarding_body3">Serva Perms ei sisällä mainoksia ja käsittelee tietoja vain paikallisesti.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">Teematila</string>
     <string name="ui_theme_mode_system_label">Järjestelmä</string>
@@ -553,7 +553,7 @@
     <string name="upgrade_benefit_support">Tue kehittäjää</string>
     <string name="upgrade_benefit_manifest_viewer">Selaa sovelluksen raakamanifesteja</string>
     <string name="general_upgrade_action">Päivitä</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Tarkkailija</string>
     <string name="watcher_dashboard_feature_title">Luvantarkkailija</string>

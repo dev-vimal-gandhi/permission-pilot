@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">目前無法取用 Google Play 服務</string>
     <string name="upgrades_no_purchases_found_check_account">找不到購買紀錄，請確認使用的帳號是否正確。</string>
-    <string name="upgrade_screen_preamble">Permission Pilot 無廣告且尊重您的隱私。升級可支持持續開發。</string>
+    <string name="upgrade_screen_preamble">Serva Perms 無廣告且尊重您的隱私。升級可支持持續開發。</string>
     <string name="upgrade_screen_subscription_trial_action">開始免費試用</string>
     <string name="upgrade_screen_subscription_action">訂閱</string>
     <string name="upgrade_screen_subscription_action_hint">%s/月，可隨時取消</string>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Alîkarî</string>
     <string name="general_error_label">Çewtî</string>
     <string name="general_share_action">Parve bike</string>
@@ -518,7 +518,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dد %2$dث</string>
     <string name="debug_debuglog_screen_duration_s">%1$dث</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">پرسیار</string>
     <string name="contact_email_tag_feature">خاسیەت</string>
@@ -526,8 +526,8 @@
     <string name="contact_email_section_expected_behavior">--- ڕەفتاری چاوێتکراو ---</string>
     <string name="contact_email_section_device_info">--- زانیاریکانی ئامێر ---</string>
     <string name="onboarding_body1">Ev serlêdan ji we re dibe alîkar ku hûn di nav serlêdanên sazkirî de bigerin û destûran keşf bikin.</string>
-    <string name="onboarding_body2">Permission Pilot agahdariya serlêdanên sazkirî berhev dike da ku rêze kirina serlêdanên we û referanskirina destûrên wan dema ku hûn vê serlêdanê bikar tînin gengaz bike.</string>
-    <string name="onboarding_body3">Permission Pilot reklam tune ye û tenê bi awayekî herêmî daneyan pêvajo dike.</string>
+    <string name="onboarding_body2">Serva Perms agahdariya serlêdanên sazkirî berhev dike da ku rêze kirina serlêdanên we û referanskirina destûrên wan dema ku hûn vê serlêdanê bikar tînin gengaz bike.</string>
+    <string name="onboarding_body3">Serva Perms reklam tune ye û tenê bi awayekî herêmî daneyan pêvajo dike.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">شێوەی دیزەین</string>
     <string name="ui_theme_mode_system_label">سیستەم</string>
@@ -553,7 +553,7 @@
     <string name="upgrade_benefit_support">پشتگیریکردنی پێوەندەکار</string>
     <string name="upgrade_benefit_manifest_viewer">Manîfestoyên xav ên sepaê bigere</string>
     <string name="general_upgrade_action">بەرزترکردن</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">چاودێر</string>
     <string name="watcher_dashboard_feature_title">چاودێری ئەجازە</string>

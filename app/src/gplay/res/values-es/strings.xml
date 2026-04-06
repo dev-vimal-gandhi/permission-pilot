@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">Los servicios de Google Play no están disponibles.</string>
     <string name="upgrades_no_purchases_found_check_account">No se encontraron compras. ¿Estás usando la cuenta correcta?</string>
-    <string name="upgrade_screen_preamble">Permission Pilot no tiene anuncios y respeta tu privacidad. Actualizar apoya el desarrollo continuo.</string>
+    <string name="upgrade_screen_preamble">Serva Perms no tiene anuncios y respeta tu privacidad. Actualizar apoya el desarrollo continuo.</string>
     <string name="upgrade_screen_subscription_trial_action">Iniciar el período de prueba gratuita</string>
     <string name="upgrade_screen_subscription_action">Suscríbete</string>
     <string name="upgrade_screen_subscription_action_hint">%s/mes, cancela en cualquier momento</string>

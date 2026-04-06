@@ -1,6 +1,6 @@
 package testhelper.coroutine
 
-import eu.darken.myperm.common.debug.logging.asLog
+import com.servalabs.perms.common.debug.logging.asLog
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.test.TestScope

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Допомога</string>
     <string name="general_error_label">Помилка</string>
     <string name="general_share_action">Поділитися</string>
@@ -564,7 +564,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dхв %2$dс</string>
     <string name="debug_debuglog_screen_duration_s">%1$dс</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Питання</string>
     <string name="contact_email_tag_feature">Функція</string>
@@ -572,8 +572,8 @@
     <string name="contact_email_section_expected_behavior">--- Очікувана поведінка ---</string>
     <string name="contact_email_section_device_info">--- Інформація про пристрій ---</string>
     <string name="onboarding_body1">Ця програма допомагає вам навігувати встановленими програмами та виявляти дозволи.</string>
-    <string name="onboarding_body2">Permission Pilot збирає інформацію про встановлені програми, щоб дозволити перелічувати ваші програми та перехресно посилатися на їх дозволи під час використання цієї програми.</string>
-    <string name="onboarding_body3">Permission Pilot не має реклами і обробляє дані лише локально.</string>
+    <string name="onboarding_body2">Serva Perms збирає інформацію про встановлені програми, щоб дозволити перелічувати ваші програми та перехресно посилатися на їх дозволи під час використання цієї програми.</string>
+    <string name="onboarding_body3">Serva Perms не має реклами і обробляє дані лише локально.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">Тема додатку</string>
     <string name="ui_theme_mode_system_label">Системна</string>
@@ -599,7 +599,7 @@
     <string name="upgrade_benefit_support">Підтримати розробника</string>
     <string name="upgrade_benefit_manifest_viewer">Переглядати необроблені маніфести застосунків</string>
     <string name="general_upgrade_action">Оновити</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Спостерігач</string>
     <string name="watcher_dashboard_feature_title">Спостерігач дозволів</string>

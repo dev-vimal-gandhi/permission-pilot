@@ -4,7 +4,7 @@ permalink: /changelog
 title: "Changelog"
 ---
 
-# Changelog for Permission Pilot
+# Changelog for Serva Perms
 
 {% for release in site.github.releases %}
 

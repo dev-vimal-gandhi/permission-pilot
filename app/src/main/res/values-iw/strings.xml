@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">עזרה</string>
     <string name="general_error_label">שגיאה</string>
     <string name="general_share_action">שתף</string>
@@ -498,7 +498,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dד\' %2$dש\'</string>
     <string name="debug_debuglog_screen_duration_s">%1$dש\'</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">שאלה</string>
     <string name="contact_email_tag_feature">תכונה</string>
@@ -506,8 +506,8 @@
     <string name="contact_email_section_expected_behavior">--- התנהגות צפויה ---</string>
     <string name="contact_email_section_device_info">--- פרטי המכשיר ---</string>
     <string name="onboarding_body1">אפליקציה זו עוזרת לך לנווט באפליקציות מותקנות ולגלות הרשאות.</string>
-    <string name="onboarding_body2">Permission Pilot אוסף מידע על אפליקציות מותקנות כדי לאפשר רישום האפליקציות שלך והצלבת ההרשאות שלהן בעת שימוש באפליקציה זו.</string>
-    <string name="onboarding_body3">ל-Permission Pilot אין פרסומות והיא מעבדת נתונים באופן מקומי בלבד.</string>
+    <string name="onboarding_body2">Serva Perms אוסף מידע על אפליקציות מותקנות כדי לאפשר רישום האפליקציות שלך והצלבת ההרשאות שלהן בעת שימוש באפליקציה זו.</string>
+    <string name="onboarding_body3">ל-Serva Perms אין פרסומות והיא מעבדת נתונים באופן מקומי בלבד.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">עיצוב</string>
     <string name="ui_theme_mode_system_label">מערכת</string>
@@ -533,7 +533,7 @@
     <string name="upgrade_benefit_support">תמוך במפתח</string>
     <string name="upgrade_benefit_manifest_viewer">עיון במניפסטים גולמיים של אפליקציות</string>
     <string name="general_upgrade_action">שדרוג</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">צופה</string>
     <string name="watcher_dashboard_feature_title">צופה הרשאות</string>

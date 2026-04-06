@@ -3,7 +3,7 @@
     <string name="upgrades_gplay_unavailable_error">Google Play services are unavailable.</string>
     <string name="upgrades_no_purchases_found_check_account">No purchases found. Are you using the right account?</string>
 
-    <string name="upgrade_screen_preamble">Permission Pilot is ad-free and respects your privacy. Upgrading supports continued development.</string>
+    <string name="upgrade_screen_preamble">Serva Perms is ad-free and respects your privacy. Upgrading supports continued development.</string>
     <string name="upgrade_screen_subscription_trial_action">Start free trial</string>
     <string name="upgrade_screen_subscription_action">Subscribe</string>
     <string name="upgrade_screen_subscription_action_hint">%s/month, cancel anytime</string>

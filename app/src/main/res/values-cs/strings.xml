@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Nápověda</string>
     <string name="general_error_label">Chyba</string>
     <string name="general_share_action">Sdílet</string>
@@ -564,7 +564,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dm %2$ds</string>
     <string name="debug_debuglog_screen_duration_s">%1$ds</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Dotaz</string>
     <string name="contact_email_tag_feature">Funkce</string>
@@ -572,8 +572,8 @@
     <string name="contact_email_section_expected_behavior">--- Očekávané chování ---</string>
     <string name="contact_email_section_device_info">--- Informace o zařízení ---</string>
     <string name="onboarding_body1">Tato aplikace vám pomáhá procházet nainstalované aplikace a zjišťovat jejich oprávnění.</string>
-    <string name="onboarding_body2">Permission Pilot shromažďuje informace o nainstalovaných aplikacích, aby mohl zobrazovat seznam vašich aplikací a porovnávat jejich oprávnění při používání této aplikace.</string>
-    <string name="onboarding_body3">Permission Pilot neobsahuje reklamy a zpracovává data pouze lokálně.</string>
+    <string name="onboarding_body2">Serva Perms shromažďuje informace o nainstalovaných aplikacích, aby mohl zobrazovat seznam vašich aplikací a porovnávat jejich oprávnění při používání této aplikace.</string>
+    <string name="onboarding_body3">Serva Perms neobsahuje reklamy a zpracovává data pouze lokálně.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">Režim motivu</string>
     <string name="ui_theme_mode_system_label">Systémový</string>
@@ -599,7 +599,7 @@
     <string name="upgrade_benefit_support">Podpořit vývojáře</string>
     <string name="upgrade_benefit_manifest_viewer">Procházet surové manifesty aplikací</string>
     <string name="general_upgrade_action">Upgradovat</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Hlídač</string>
     <string name="watcher_dashboard_feature_title">Hlídač oprávnění</string>

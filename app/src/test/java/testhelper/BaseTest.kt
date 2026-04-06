@@ -1,8 +1,8 @@
 package testhelper
 
-import eu.darken.myperm.common.debug.logging.Logging
-import eu.darken.myperm.common.debug.logging.Logging.Priority.VERBOSE
-import eu.darken.myperm.common.debug.logging.log
+import com.servalabs.perms.common.debug.logging.Logging
+import com.servalabs.perms.common.debug.logging.Logging.Priority.VERBOSE
+import com.servalabs.perms.common.debug.logging.log
 import io.mockk.unmockkAll
 import org.junit.jupiter.api.AfterAll
 import testhelpers.logging.JUnitLogger

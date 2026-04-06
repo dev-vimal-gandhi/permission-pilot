@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">A Google Play szolgáltatások nem érhetők el.</string>
     <string name="upgrades_no_purchases_found_check_account">Nem találhatók vásárlások. A megfelelő fiókot használod?</string>
-    <string name="upgrade_screen_preamble">A Permission Pilot reklámmentes és tiszteletben tartja az adatvédelmed. A frissítés támogatja a további fejlesztést.</string>
+    <string name="upgrade_screen_preamble">A Serva Perms reklámmentes és tiszteletben tartja az adatvédelmed. A frissítés támogatja a további fejlesztést.</string>
     <string name="upgrade_screen_subscription_trial_action">Ingyenes próba indítása</string>
     <string name="upgrade_screen_subscription_action">Iratkozz fel</string>
     <string name="upgrade_screen_subscription_action_hint">%s/hónap, bármikor lemondható</string>

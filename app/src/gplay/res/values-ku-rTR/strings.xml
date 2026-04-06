@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">Xizmetên Google Play berdest nînin.</string>
     <string name="upgrades_no_purchases_found_check_account">Kirîn nehate dîtin. Ma tu hesabê rast bi kar tînî?</string>
-    <string name="upgrade_screen_preamble">Permission Pilot بێ رێکلامەیە و نھێنیتکەت پھابوو دەکات. بەرزترکردن پشتگیریکردنی گەشەپێکردنی دەوامەیە.</string>
+    <string name="upgrade_screen_preamble">Serva Perms بێ رێکلامەیە و نھێنیتکەت پھابوو دەکات. بەرزترکردن پشتگیریکردنی گەشەپێکردنی دەوامەیە.</string>
     <string name="upgrade_screen_subscription_trial_action">دەستپێککردنی تەستی بەژیوانی</string>
     <string name="upgrade_screen_subscription_action">بوونهەڵبەست</string>
     <string name="upgrade_screen_subscription_action_hint">%s لە مانگ، ھەر کاتیک لابردرێ</string>

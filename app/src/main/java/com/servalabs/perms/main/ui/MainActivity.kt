@@ -1,0 +1,108 @@
+package com.servalabs.perms.main.ui
+
+import android.content.Intent
+import android.os.Bundle
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.graphics.luminance
+import androidx.compose.ui.graphics.toArgb
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.core.view.WindowCompat
+import androidx.navigation3.runtime.NavKey
+import androidx.navigation3.runtime.rememberNavBackStack
+import dagger.hilt.android.AndroidEntryPoint
+import com.servalabs.perms.common.debug.logging.log
+import com.servalabs.perms.common.debug.logging.logTag
+import com.servalabs.perms.common.navigation.LocalNavigationController
+import com.servalabs.perms.common.navigation.Nav
+import com.servalabs.perms.common.navigation.NavigationController
+import com.servalabs.perms.common.navigation.NavigationEntry
+import com.servalabs.perms.common.theming.ServaPermsTheme
+import com.servalabs.perms.common.uix.Activity2
+import javax.inject.Inject
+
+@AndroidEntryPoint
+class MainActivity : Activity2() {
+
+    private val vm: MainActivityVM by viewModels()
+
+    @Inject lateinit var navCtrl: NavigationController
+    @Inject lateinit var navigationEntries: Set<@JvmSuppressWildcards NavigationEntry>
+
+    private var showSplashScreen by mutableStateOf(true)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val splashScreen = installSplashScreen()
+        enableEdgeToEdge()
+        splashScreen.setKeepVisibleCondition { showSplashScreen && savedInstanceState == null }
+
+        vm.increaseLaunchCount()
+        vm.handleIntent(intent)
+
+        val startDestination: NavKey = if (vm.isOnboardingFinished) {
+            Nav.Tab.Apps
+        } else {
+            Nav.Main.Onboarding
+        }
+
+        setContent {
+            val readyState by vm.readyState.collectAsState()
+            LaunchedEffect(readyState) {
+                if (readyState) showSplashScreen = false
+            }
+
+            val backStack = rememberNavBackStack(startDestination)
+            navCtrl.setup(backStack)
+
+            val themeState by vm.themeState.collectAsState()
+
+            ServaPermsTheme(state = themeState) {
+                val backgroundColor = MaterialTheme.colorScheme.background
+                val useDarkIcons = backgroundColor.luminance() > 0.5f
+                SideEffect {
+                    window.decorView.setBackgroundColor(backgroundColor.toArgb())
+                    val insetsController = WindowCompat.getInsetsController(window, window.decorView)
+                    insetsController.isAppearanceLightStatusBars = useDarkIcons
+                    insetsController.isAppearanceLightNavigationBars = useDarkIcons
+                }
+
+                CompositionLocalProvider(LocalNavigationController provides navCtrl) {
+                    LaunchedEffect(Unit) {
+                        vm.deepLinkNav.collect { dest ->
+                            when (dest) {
+                                is Nav.Tab -> navCtrl.replace(dest)
+                                else -> navCtrl.goTo(dest)
+                            }
+                        }
+                    }
+
+                    MainScreen(
+                        backStack = backStack,
+                        navCtrl = navCtrl,
+                        navigationEntries = navigationEntries,
+                    )
+                }
+            }
+        }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        vm.handleIntent(intent)
+    }
+
+    companion object {
+        private val TAG = logTag("MainActivity")
+    }
+}

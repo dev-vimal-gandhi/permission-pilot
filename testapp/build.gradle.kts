@@ -5,11 +5,11 @@ plugins {
 val versionCodeProp = (project.findProperty("versionCode") as? String)?.toIntOrNull() ?: 1
 
 android {
-    namespace = "eu.darken.myperm.testapp"
+    namespace = "com.servalabs.perms.testapp"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "eu.darken.myperm.testapp"
+        applicationId = "com.servalabs.perms.testapp"
         minSdk = 23
         targetSdk = 36
         versionCode = versionCodeProp

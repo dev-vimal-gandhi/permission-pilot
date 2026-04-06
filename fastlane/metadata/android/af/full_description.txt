@@ -1,4 +1,4 @@
-<i>Permission Pilot</i> is 'n nuwe soort program om jou te help om programme en hul toestemmings te hersien.
+<i>Serva Perms</i> is 'n nuwe soort program om jou te help om programme en hul toestemmings te hersien.
 
 Met elke Android-opdatering word toestemmings meer kompleks.
 Android wys toestemmings op verskeie verskillende plekke, wat dit nie makliker maak om dit te hersien nie:
@@ -8,7 +8,7 @@ Android wys toestemmings op verskeie verskillende plekke, wat dit nie makliker m
 * Toestemmingsbestuurder
 * en meer...
 
-<i>Permission Pilot</i> lys alle toestemmings op een plek en gee jou 'n oorsigtelike beeld van programtoestemmings.
+<i>Serva Perms</i> lys alle toestemmings op een plek en gee jou 'n oorsigtelike beeld van programtoestemmings.
 
 Twee perspektiewe is beskikbaar: Jy kan óf alle toestemmings wat 'n program aanvra sien, óf alle programme sien wat 'n spesifieke toestemming aanvra.
 

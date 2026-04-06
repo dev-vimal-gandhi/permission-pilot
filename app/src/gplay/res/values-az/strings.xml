@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">Google Play xidmətləri mövcud deyil.</string>
     <string name="upgrades_no_purchases_found_check_account">Heç bir satınalma tapılmadı. Doğru hesabı istifadə edirsiniz?</string>
-    <string name="upgrade_screen_preamble">Permission Pilot rəkləmsüzdür və məxfiliyinizə hörmət edir. Yüksəltmək davamlı gelişdirməni dəstəkləyir.</string>
+    <string name="upgrade_screen_preamble">Serva Perms rəkləmsüzdür və məxfiliyinizə hörmət edir. Yüksəltmək davamlı gelişdirməni dəstəkləyir.</string>
     <string name="upgrade_screen_subscription_trial_action">Pülsüz sınaq başladın</string>
     <string name="upgrade_screen_subscription_action">Abunə olun</string>
     <string name="upgrade_screen_subscription_action_hint">%s/ay, istədiyiniz zaman ldö bilirsiniz</string>

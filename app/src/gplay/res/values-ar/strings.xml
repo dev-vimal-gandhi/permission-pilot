@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">خدمات Google Play غير متوفرة.</string>
     <string name="upgrades_no_purchases_found_check_account">لم يتم العثور على مشتريات. أتستخدم الحساب الصحيح؟</string>
-    <string name="upgrade_screen_preamble">Permission Pilot خالي من الإعلانات ويحترم خصوصيتك. الترقية تدعم استمرار التطوير.</string>
+    <string name="upgrade_screen_preamble">Serva Perms خالي من الإعلانات ويحترم خصوصيتك. الترقية تدعم استمرار التطوير.</string>
     <string name="upgrade_screen_subscription_trial_action">ابدأ الإصدار التجريبي المجاني</string>
     <string name="upgrade_screen_subscription_action">اشتراك</string>
     <string name="upgrade_screen_subscription_action_hint">%s/شهرياً، إلغاء في أي وقت</string>

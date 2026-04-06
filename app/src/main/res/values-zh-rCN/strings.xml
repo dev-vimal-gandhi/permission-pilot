@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">帮助</string>
     <string name="general_error_label">错误</string>
     <string name="general_share_action">分享</string>
@@ -495,7 +495,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP：…</string>
     <string name="debug_debuglog_screen_duration_ms">%1$d分%2$d秒</string>
     <string name="debug_debuglog_screen_duration_s">%1$d秒</string>
-    <string name="support_debuglog_share_subject">Permission Pilot 调试日志 - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms 调试日志 - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">问题</string>
     <string name="contact_email_tag_feature">功能</string>
@@ -503,8 +503,8 @@
     <string name="contact_email_section_expected_behavior">--- 预期行为 ---</string>
     <string name="contact_email_section_device_info">--- 设备信息 ---</string>
     <string name="onboarding_body1">这款应用可以帮助您浏览已安装的应用程序并发现其权限。</string>
-    <string name="onboarding_body2">Permission Pilot 收集已安装应用程序的信息，以便在使用本应用程序时列出您的应用程序并交叉引用其权限。</string>
-    <string name="onboarding_body3">Permission Pilot 不含广告，仅在本地处理数据。</string>
+    <string name="onboarding_body2">Serva Perms 收集已安装应用程序的信息，以便在使用本应用程序时列出您的应用程序并交叉引用其权限。</string>
+    <string name="onboarding_body3">Serva Perms 不含广告，仅在本地处理数据。</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">主题样式</string>
     <string name="ui_theme_mode_system_label">跟随系统</string>
@@ -530,7 +530,7 @@
     <string name="upgrade_benefit_support">支持开发者</string>
     <string name="upgrade_benefit_manifest_viewer">浏览原始应用清单</string>
     <string name="general_upgrade_action">升级</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">监控器</string>
     <string name="watcher_dashboard_feature_title">权限监控器</string>

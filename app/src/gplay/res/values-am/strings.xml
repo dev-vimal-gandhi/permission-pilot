@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">Google Play አገልግሎቶች አይገኙም።</string>
     <string name="upgrades_no_purchases_found_check_account">ምንም ግዢዎች አልተገኙም። ትክክለኛውን መለያ እየተጠቀሙ ነው?</string>
-    <string name="upgrade_screen_preamble">Permission Pilot አዶዘቕ ዘርዘር እና ስሴያወን ይካባተኻላለ። ደርጉን ወደፈርም ብጅት ይደግፋለ።</string>
+    <string name="upgrade_screen_preamble">Serva Perms አዶዘቕ ዘርዘር እና ስሴያወን ይካባተኻላለ። ደርጉን ወደፈርም ብጅት ይደግፋለ።</string>
     <string name="upgrade_screen_subscription_trial_action">የ፣የ ንብስት ይጀምሩ</string>
     <string name="upgrade_screen_subscription_action">ይመዝገቡ</string>
     <string name="upgrade_screen_subscription_action_hint">%s/ወር ፣ በመዘኘም መቀሰል ይቻላለ</string>

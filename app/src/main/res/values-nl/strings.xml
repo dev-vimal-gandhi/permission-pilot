@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Help</string>
     <string name="general_error_label">Fout</string>
     <string name="general_share_action">Delen</string>
@@ -518,7 +518,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dm %2$ds</string>
     <string name="debug_debuglog_screen_duration_s">%1$ds</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Vraag</string>
     <string name="contact_email_tag_feature">Functie</string>
@@ -526,8 +526,8 @@
     <string name="contact_email_section_expected_behavior">--- Verwacht gedrag ---</string>
     <string name="contact_email_section_device_info">--- Apparaatinfo ---</string>
     <string name="onboarding_body1">Deze app helpt je navigeren door geïnstalleerde applicaties en machtigingen ontdekken.</string>
-    <string name="onboarding_body2">Permission Pilot verzamelt informatie over geïnstalleerde applicaties om het mogelijk te maken je apps weer te geven en hun machtigingen kruislings te refereren bij het gebruik van deze applicatie.</string>
-    <string name="onboarding_body3">Permission Pilot heeft geen advertenties en verwerkt gegevens alleen lokaal.</string>
+    <string name="onboarding_body2">Serva Perms verzamelt informatie over geïnstalleerde applicaties om het mogelijk te maken je apps weer te geven en hun machtigingen kruislings te refereren bij het gebruik van deze applicatie.</string>
+    <string name="onboarding_body3">Serva Perms heeft geen advertenties en verwerkt gegevens alleen lokaal.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">Thema-modus</string>
     <string name="ui_theme_mode_system_label">Systeem</string>
@@ -553,7 +553,7 @@
     <string name="upgrade_benefit_support">Ondersteun de ontwikkelaar</string>
     <string name="upgrade_benefit_manifest_viewer">Bekijk onbewerkte app-manifesten</string>
     <string name="general_upgrade_action">Upgraden</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Watcher</string>
     <string name="watcher_dashboard_feature_title">Toestemmingswatcher</string>

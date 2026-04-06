@@ -518,7 +518,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dm %2$ds</string>
     <string name="debug_debuglog_screen_duration_s">%1$ds</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Pregunta</string>
     <string name="contact_email_tag_feature">Función</string>
@@ -553,7 +553,7 @@
     <string name="upgrade_benefit_support">Apoya al desarrollador</string>
     <string name="upgrade_benefit_manifest_viewer">Explorar manifiestos de apps sin procesar</string>
     <string name="general_upgrade_action">Actualizar</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">Watcher</string>
     <string name="watcher_dashboard_feature_title">Permission Watcher</string>

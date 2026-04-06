@@ -1,0 +1,219 @@
+package com.servalabs.perms.apps.core
+
+import android.content.Context
+import androidx.work.WorkManager
+import dagger.hilt.android.qualifiers.ApplicationContext
+import com.servalabs.perms.apps.core.container.BasePkg
+import com.servalabs.perms.apps.core.known.AKnownPkg
+import com.servalabs.perms.apps.core.manifest.ManifestHintRepo
+import com.servalabs.perms.common.coroutine.AppScope
+import com.servalabs.perms.common.debug.logging.Logging.Priority.WARN
+import com.servalabs.perms.common.debug.logging.asLog
+import com.servalabs.perms.common.debug.logging.log
+import com.servalabs.perms.common.debug.logging.logTag
+import com.servalabs.perms.common.flow.shareLatest
+import com.servalabs.perms.common.room.ServaPermsDatabase
+import com.servalabs.perms.common.room.dao.SnapshotDao
+import com.servalabs.perms.common.room.dao.SnapshotPkgDao
+import com.servalabs.perms.common.room.entity.SnapshotEntity
+import com.servalabs.perms.common.room.entity.SnapshotPkgDeclaredPermEntity
+import com.servalabs.perms.common.room.entity.TriggerReason
+import com.servalabs.perms.watcher.core.WatcherWorkScheduler
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.debounce
+import kotlinx.coroutines.flow.flatMapLatest
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.merge
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.onStart
+import kotlinx.coroutines.flow.withIndex
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
+import java.util.UUID
+import javax.inject.Inject
+import javax.inject.Singleton
+
+@Singleton
+class AppRepo @Inject constructor(
+    @ApplicationContext private val context: Context,
+    @AppScope private val appScope: CoroutineScope,
+    packageEventListener: PackageEventListener,
+    private val appSourcer: AppSourcer,
+    private val database: ServaPermsDatabase,
+    private val snapshotDao: SnapshotDao,
+    private val snapshotPkgDao: SnapshotPkgDao,
+    private val snapshotMapper: SnapshotMapper,
+    private val workManager: WorkManager,
+    private val manifestHintRepo: ManifestHintRepo,
+) {
+
+    // ── UI state ────────────────────────────────────────────────────────
+
+    sealed class AppDataState {
+        data object NoSnapshot : AppDataState()
+        data class Ready(val apps: List<AppInfo>) : AppDataState()
+    }
+
+    val appData: Flow<AppDataState> = snapshotDao.observeLatestSnapshotId()
+        .flatMapLatest { snapshotId ->
+            if (snapshotId == null) return@flatMapLatest flowOf(AppDataState.NoSnapshot)
+            combine(
+                snapshotPkgDao.observePkgsForSnapshot(snapshotId),
+                snapshotPkgDao.observePermsForSnapshot(snapshotId),
+                snapshotPkgDao.observeDeclaredPermCountsForSnapshot(snapshotId),
+                manifestHintRepo.hints,
+            ) { pkgs, perms, declaredCounts, hints ->
+                if (pkgs.isEmpty()) return@combine AppDataState.NoSnapshot
+                val permsByPkg = perms.groupBy { Pair(it.pkgName, it.userHandleId) }
+                val declaredCountByPkg = declaredCounts.associateBy(
+                    keySelector = { Pair(it.pkgName, it.userHandleId) },
+                    valueTransform = { it.declaredCount },
+                )
+                val apps = pkgs.map { pkgEntity ->
+                    val key = Pair(pkgEntity.pkgName, pkgEntity.userHandleId)
+                    snapshotMapper.toAppInfo(
+                        pkgEntity = pkgEntity,
+                        permEntities = permsByPkg[key] ?: emptyList(),
+                        declaredPermCount = declaredCountByPkg[key] ?: 0,
+                        manifestHint = hints[pkgEntity.pkgName],
+                    )
+                }
+                AppDataState.Ready(apps)
+            }
+        }
+        .shareLatest(scope = appScope, started = SharingStarted.Lazily)
+
+    // ── Sync / refresh ──────────────────────────────────────────────────
+
+    private val _isScanning = MutableStateFlow(false)
+    val isScanning: StateFlow<Boolean> = _isScanning.asStateFlow()
+
+    private val refreshTrigger = MutableSharedFlow<TriggerReason>(extraBufferCapacity = 1)
+
+    init {
+        merge(
+            refreshTrigger,
+            packageEventListener.events
+                .onStart { emit(PackageEventListener.Event.PackageInstalled(AKnownPkg.AndroidSystem.id)) }
+                .withIndex()
+                .debounce { (index, _) -> if (index == 0) 0L else 1_000L }
+                .map { (index, _) ->
+                    if (index == 0) TriggerReason.APP_LAUNCH else TriggerReason.PACKAGE_CHANGE
+                },
+        ).onEach { reason ->
+            try {
+                _isScanning.value = true
+                scanAndSave(reason)
+                enqueuePermissionWatcher()
+                manifestHintRepo.enqueueHintScan()
+            } catch (e: Exception) {
+                log(TAG, WARN) { "Failed to scan/save: ${e.asLog()}" }
+            } finally {
+                _isScanning.value = false
+            }
+        }.launchIn(appScope)
+    }
+
+    fun refresh() {
+        log(TAG) { "refresh()" }
+        refreshTrigger.tryEmit(TriggerReason.MANUAL_REFRESH)
+    }
+
+    private fun enqueuePermissionWatcher() = WatcherWorkScheduler.enqueueWatcher(workManager)
+
+    suspend fun scanAndSave(reason: TriggerReason) {
+        val start = System.currentTimeMillis()
+        val allPkgs = appSourcer.scanPackages()
+        val scanDurationMs = System.currentTimeMillis() - start
+        log(TAG) { "Perf: Total pkgs: ${allPkgs.size} in ${scanDurationMs}ms" }
+        saveSnapshot(allPkgs, reason, scanDurationMs)
+    }
+
+    // ── Snapshot persistence ────────────────────────────────────────────
+
+    private val saveMutex = Mutex()
+
+    private suspend fun saveSnapshot(
+        pkgs: Collection<BasePkg>,
+        reason: TriggerReason,
+        durationMs: Long,
+    ) = saveMutex.withLock {
+        val totalStart = System.currentTimeMillis()
+        val snapshotId = UUID.randomUUID().toString()
+        log(TAG) { "saveSnapshot($snapshotId, reason=$reason, pkgs=${pkgs.size})" }
+
+        // Pre-resolve labels outside the transaction to avoid IPC under DB lock.
+        // loadLabel() can throw on corrupted APKs, so catch per-package.
+        val labelStart = System.currentTimeMillis()
+        for (pkg in pkgs) {
+            try {
+                pkg.getLabel(context)
+            } catch (e: Exception) {
+                log(TAG, WARN) { "Failed to pre-resolve label for ${pkg.id}: $e" }
+            }
+        }
+        log(TAG) { "Perf: saveSnapshot() pre-resolved labels in ${System.currentTimeMillis() - labelStart}ms" }
+
+        // Map + insert atomically, in chunks to limit peak entity memory.
+        // Labels are now cached — toEntities() does no IPC.
+        val txStart = System.currentTimeMillis()
+        val pkgList = pkgs.toList()
+        database.inTransaction {
+            snapshotDao.insertSnapshot(
+                SnapshotEntity(
+                    snapshotId = snapshotId,
+                    createdAt = System.currentTimeMillis(),
+                    triggerReason = reason.name,
+                    pkgCount = pkgs.size,
+                    durationMs = durationMs,
+                )
+            )
+            for (chunk in pkgList.chunked(50)) {
+                val entities = chunk.map { snapshotMapper.toEntities(snapshotId, it) }
+                snapshotPkgDao.insertPkgs(entities.map { it.pkg })
+                snapshotPkgDao.insertPermissions(entities.flatMap { it.permissions })
+                snapshotPkgDao.insertDeclaredPermissions(entities.flatMap { it.declaredPermissions })
+            }
+        }
+        log(TAG) { "Perf: saveSnapshot() DB transaction in ${System.currentTimeMillis() - txStart}ms" }
+
+        pruneSnapshots()
+        log(TAG) { "Perf: saveSnapshot() total in ${System.currentTimeMillis() - totalStart}ms" }
+    }
+
+    suspend fun pruneSnapshots(keepCount: Int = 20) {
+        val oldIds = snapshotDao.getOldSnapshotIds(keepCount)
+        if (oldIds.isNotEmpty()) {
+            log(TAG) { "pruneSnapshots(): deleting ${oldIds.size} old snapshots" }
+            snapshotDao.deleteSnapshots(oldIds)
+        }
+    }
+
+    suspend fun pruneSnapshotsBefore(anchorId: String) {
+        val oldIds = snapshotDao.getSnapshotIdsBefore(anchorId)
+        if (oldIds.isNotEmpty()) {
+            log(TAG) { "pruneSnapshotsBefore($anchorId): deleting ${oldIds.size} old snapshots" }
+            snapshotDao.deleteSnapshots(oldIds)
+        }
+    }
+
+    // ── Queries ─────────────────────────────────────────────────────────
+
+    suspend fun getLatestDeclaredPerms(): List<SnapshotPkgDeclaredPermEntity> {
+        val latest = snapshotDao.getLatestSnapshot() ?: return emptyList()
+        return snapshotPkgDao.getDeclaredPermsForSnapshot(latest.snapshotId)
+    }
+
+    companion object {
+        internal val TAG = logTag("Apps", "Repo")
+    }
+}

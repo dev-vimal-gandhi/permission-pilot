@@ -1,6 +1,6 @@
 package testhelpers.datastore
 
-import eu.darken.myperm.common.datastore.DataStoreValue
+import com.servalabs.perms.common.datastore.DataStoreValue
 import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk

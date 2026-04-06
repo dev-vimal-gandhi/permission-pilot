@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">Yardım</string>
     <string name="general_error_label">Hata</string>
     <string name="general_share_action">Paylaş</string>
@@ -518,7 +518,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$dd %2$ds</string>
     <string name="debug_debuglog_screen_duration_s">%1$ds</string>
-    <string name="support_debuglog_share_subject">Permission Pilot HataAyıklama Kaydı - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms HataAyıklama Kaydı - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">Soru</string>
     <string name="contact_email_tag_feature">Özellik</string>
@@ -526,8 +526,8 @@
     <string name="contact_email_section_expected_behavior">--- Beklenen Davranış ---</string>
     <string name="contact_email_section_device_info">--- Cihaz Bilgileri ---</string>
     <string name="onboarding_body1">Bu uygulama, yüklü uygulamalarda gezinmenize ve izinleri keşfetmenize yardımcı olur.</string>
-    <string name="onboarding_body2">Permission Pilot, bu uygulamayı kullanırken uygulamalarınızı listelemek ve izinlerini çapraz referanslamak için Yüklü Uygulama bilgilerini toplar.</string>
-    <string name="onboarding_body3">Permission Pilot\'ta reklam yoktur ve verileri yalnızca yerel olarak işler.</string>
+    <string name="onboarding_body2">Serva Perms, bu uygulamayı kullanırken uygulamalarınızı listelemek ve izinlerini çapraz referanslamak için Yüklü Uygulama bilgilerini toplar.</string>
+    <string name="onboarding_body3">Serva Perms\'ta reklam yoktur ve verileri yalnızca yerel olarak işler.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">Tema modu</string>
     <string name="ui_theme_mode_system_label">Sistem</string>
@@ -553,7 +553,7 @@
     <string name="upgrade_benefit_support">Geliştiriciyi destekle</string>
     <string name="upgrade_benefit_manifest_viewer">Ham uygulama manifestolarına göz at</string>
     <string name="general_upgrade_action">Yükselt</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">İzleyici</string>
     <string name="watcher_dashboard_feature_title">İzin İzleyici</string>

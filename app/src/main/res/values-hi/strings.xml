@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">सहायता</string>
 
     <string name="general_error_label">त्रुटि</string>
@@ -76,9 +76,19 @@
     <string name="apps_sort_install_source_label">इंस्टॉल स्रोत</string>
 
     <string name="general_sort_action">क्रम</string>
-    <string name="apps_permissions_x_of_x_granted">%2$d में से %1$d प्रदान किए गए।</string>
-    <string name="apps_permissions_x_requested">%1$d अनुमतियां अनुरोधित।</string>
-    <string name="apps_permissions_declares_x">%1$d अनुमतियां घोषित करता है।</string>
+    <plurals name="apps_permissions_x_of_x_granted">
+        <item quantity="one">%1$d of %2$d granted.</item>
+        <item quantity="other">%1$d of %2$d granted.</item>
+    </plurals>
+    <plurals name="apps_permissions_x_requested">
+        <item quantity="one">%1$d permission requested.</item>
+        <item quantity="other">%1$d permissions requested.</item>
+    </plurals>
+    <plurals name="apps_permissions_declares_x">
+        <item quantity="one">Declares %1$d permission.</item>
+        <item quantity="other">Declares %1$d permissions.</item>
+    </plurals>
+
     <string name="apps_details_installer_label">इंस्टॉल स्रोत</string>
     <string name="apps_details_installer_unknown_label">जानकारी उपलब्ध नहीं</string>
 
@@ -114,8 +124,15 @@
     <string name="permissions_details_apps_granted_label">प्रदान किए गए ऐप्स</string>
     <string name="permissions_details_apps_requested_label">अनुरोधित ऐप्स</string>
     <string name="permissions_details_apps_declared_label">घोषित ऐप्स</string>
-    <string name="permissions_details_count_system_apps">"सिस्टम ऐप्स: %2$d में से %1$d को प्रदान किया गया।"</string>
-    <string name="permissions_details_count_user_apps">"उपयोगकर्ता ऐप्स: %2$d में से %1$d को प्रदान किया गया।"</string>
+    <plurals name="permissions_details_count_system_apps">
+        <item quantity="one">System Apps: Granted to %1$d out of %2$d.</item>
+        <item quantity="other">System Apps: Granted to %1$d out of %2$d.</item>
+    </plurals>
+    <plurals name="permissions_details_count_user_apps">
+        <item quantity="one">User Apps: Granted to %1$d out of %2$d.</item>
+        <item quantity="other">User Apps: Granted to %1$d out of %2$d.</item>
+    </plurals>
+
     <string name="permissions_details_description_restrictions_caveat_description">Android प्रतिबंधों के कारण अन्य उपयोगकर्ता प्रोफ़ाइल में इंस्टॉल किए गए ऐप्स को ऊपर की गणना से बाहर रखा गया है।</string>
     <string name="permissions_permission_details_label">अनुमति विवरण</string>
     <string-array name="generic_loading_labels">
@@ -130,11 +147,7 @@
     </string-array>
     <string name="permissions_action_none_msg">इस अनुमति के लिए कोई कार्रवाई उपलब्ध नहीं है</string>
 
-    <string name="app_details_permission_granted_label">प्रदान किया गया</string>
-    <string name="app_details_permission_requested_label">अनुरोधित</string>
-    <string name="app_details_permission_declared_label">घोषित</string>
 
-    <string name="app_details_permissions_label">अनुमतियां</string>
     <string name="apps_app_details_label">ऐप विवरण</string>
     <string name="apps_details_app_type_label">ऐप प्रकार</string>
     <string name="apps_details_app_type_system_label">सिस्टम ऐप</string>
@@ -147,53 +160,16 @@
     <string name="apps_details_target_sdk_label">लक्ष्य SDK</string>
     <string name="apps_details_compile_sdk_label">कंपाइल SDK</string>
     <string name="apps_details_min_sdk_label">न्यूनतम SDK</string>
-    <string name="apps_details_description_primary_description">"%2$d में से %1$d अनुमतियां प्रदान की गईं।"</string>
-    <string name="apps_details_description_restrictions_caveat_description">यह ऐप किसी अन्य उपयोगकर्ता प्रोफ़ाइल में इंस्टॉल है। Android प्रतिबंधों के कारण, प्रदान की गई अनुमतियां केवल वर्तमान सक्रिय प्रोफ़ाइल में इंस्टॉल किए गए ऐप्स के लिए निर्धारित की जा सकती हैं।</string>
-    <string name="apps_details_description_uninstalled_caveat">यह ऐप अनइंस्टॉल कर दिया गया है लेकिन इसका डेटा बरकरार रखा गया है। अनइंस्टॉल किए गए ऐप्स के लिए अनुमति स्थिति निर्धारित नहीं की जा सकती।</string>
-    <string name="apps_details_description_secondary_description">"%d अनुमतियां अनुरोधित।"</string>
-    <string name="apps_details_shareduserid_label">साझा उपयोगकर्ता ID वाले ऐप्स</string>
-    <string name="apps_details_siblings_label">सिबलिंग्स</string>
-    <string name="apps_details_twins_descriptions">अन्य उपयोगकर्ता प्रोफ़ाइल(ओं) में इंस्टॉल।</string>
-    <string name="apps_details_twins_label">क्लोन</string>
+    <plurals name="apps_details_description_primary_description">
+        <item quantity="one">%1$d of %2$d permissions granted.</item>
+        <item quantity="other">%1$d of %2$d permissions granted.</item>
+    </plurals>
+    <plurals name="apps_details_description_secondary_description">
+        <item quantity="one">%d permission requested.</item>
+        <item quantity="other">%d permissions requested.</item>
+    </plurals>
 
-    <string name="apps_details_signing_certificate_label">हस्ताक्षर प्रमाणपत्र</string>
-    <string name="apps_details_signing_certificate_sha256_label">SHA-256 फिंगरप्रिंट</string>
-    <string name="apps_details_signing_certificate_sha1_label">SHA-1 फिंगरप्रिंट</string>
-    <string name="apps_details_signing_certificate_subject_label">विषय</string>
-    <string name="apps_details_signing_certificate_issuer_label">जारीकर्ता</string>
-    <string name="apps_details_signing_certificate_serial_label">सीरियल नंबर</string>
-    <string name="apps_details_signing_certificate_validity_label">वैधता</string>
 
-    <string name="apps_details_apk_label">APK</string>
-    <string name="apps_details_apk_path_label">APK पथ</string>
-    <string name="apps_details_apk_size_label">APK आकार</string>
-
-    <string name="apps_details_overview_label">अवलोकन</string>
-    <string name="overview_label">अवलोकन</string>
-    <string name="overview_summary_label">सारांश</string>
-    <string name="overview_apps_label">ऐप्स</string>
-    <string name="overview_permissions_label">अनुमतियां</string>
-    <string name="overview_permissions_unique_label">अद्वितीय अनुमतियां</string>
-    <string name="overview_permissions_aosp_label">AOSP अनुमतियां</string>
-    <string name="overview_permissions_custom_label">कस्टम अनुमतियां</string>
-    <string name="overview_permissions_special_label">विशेष अनुमतियां</string>
-    <string name="overview_permissions_runtime_label">रनटाइम अनुमतियां</string>
-    <string name="overview_permissions_install_label">इंस्टॉल अनुमतियां</string>
-    <string name="overview_page_label">अवलोकन</string>
-    <string name="overview_device_android_patch_label">पैच स्तर</string>
-    <string name="overview_device_android_version_label">Android संस्करण</string>
-    <string name="overview_device_name_label">डिवाइस</string>
-    <string name="overview_summary_apps_active_profile_label">सक्रिय प्रोफ़ाइल में ऐप्स</string>
-    <string name="overview_summary_apps_clones_label">अन्य प्रोफ़ाइल में क्लोन वाले ऐप्स</string>
-    <string name="overview_summary_apps_installers_label">\'अज्ञात स्रोतों से इंस्टॉल करें\' सक्षम वाले ऐप्स</string>
-    <string name="overview_summary_apps_offline_label">\'कोई इंटरनेट नहीं\' अनुमति वाले ऐप्स</string>
-    <string name="overview_summary_apps_other_profile_label">प्रबंधित उपयोगकर्ता प्रोफ़ाइल(ओं) में ऐप्स, क्लोन को छोड़कर</string>
-    <string name="overview_summary_apps_overlayers_label">\'शीर्ष पर दिखाई दें\' सकने वाले ऐप्स</string>
-    <string name="overview_summary_apps_sharedids_label">SharedUserID वाले ऐप्स</string>
-    <string name="overview_summary_apps_sideloaded_label">बाहरी स्रोतों से साइडलोड किए गए ऐप्स</string>
-
-    <string name="overview_info_label">जानकारी</string>
-    <string name="overview_device_label">डिवाइस</string>
 
     <string name="apps_known_android_system_label">Android सिस्टम</string>
     <string name="apps_known_installer_gplay_label">Google Play Store</string>
@@ -211,8 +187,8 @@
     <string name="updated_at_x">अंतिम अपडेट: %s</string>
 
     <string name="onboarding_body1">यह ऐप आपको इंस्टॉल किए गए ऐप्लिकेशन नेविगेट करने और अनुमतियां खोजने में मदद करता है।</string>
-    <string name="onboarding_body2">Permission Pilot आपके ऐप्स की सूची और उनकी अनुमतियों के क्रॉस-रेफरेंस को सक्षम करने के लिए इंस्टॉल किए गए ऐप्लिकेशन की जानकारी एकत्र करता है।</string>
-    <string name="onboarding_body3">Permission Pilot में कोई विज्ञापन नहीं है और यह केवल स्थानीय रूप से डेटा प्रोसेस करता है।</string>
+    <string name="onboarding_body2">Serva Perms आपके ऐप्स की सूची और उनकी अनुमतियों के क्रॉस-रेफरेंस को सक्षम करने के लिए इंस्टॉल किए गए ऐप्लिकेशन की जानकारी एकत्र करता है।</string>
+    <string name="onboarding_body3">Serva Perms में कोई विज्ञापन नहीं है और यह केवल स्थानीय रूप से डेटा प्रोसेस करता है।</string>
 
 
     <string name="permission_write_calendar_label">कैलेंडर लिखें</string>

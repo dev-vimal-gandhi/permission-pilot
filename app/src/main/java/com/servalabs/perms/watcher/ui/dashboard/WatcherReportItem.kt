@@ -1,0 +1,20 @@
+package com.servalabs.perms.watcher.ui.dashboard
+
+import com.servalabs.perms.apps.core.Pkg
+import com.servalabs.perms.watcher.core.WatcherEventType
+
+data class WatcherReportItem(
+    val id: Long,
+    val packageName: Pkg.Name,
+    val appLabel: String?,
+    val showPkgName: Boolean = false,
+    val versionName: String?,
+    val previousVersionName: String?,
+    val eventType: WatcherEventType,
+    val detectedAt: Long,
+    val isSeen: Boolean,
+    val hasAddedPermissions: Boolean,
+    val hasLostPermissions: Boolean,
+    val gainedCount: Int = 0,
+    val lostCount: Int = 0,
+)

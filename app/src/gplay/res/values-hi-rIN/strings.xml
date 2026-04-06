@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">Google Play सेवाएं उपलब्ध नहीं हैं।</string>
     <string name="upgrades_no_purchases_found_check_account">कोई खरीदारी नहीं मिली। क्या आप सही खाते का उपयोग कर रहे हैं?</string>
-    <string name="upgrade_screen_preamble">Permission Pilot विज्ञापन-मुक्त है और आपकी गोपनीयता का सम्मान करता है। अपग्रेड करना निरंतर विकास का समर्थन करता है।</string>
+    <string name="upgrade_screen_preamble">Serva Perms विज्ञापन-मुक्त है और आपकी गोपनीयता का सम्मान करता है। अपग्रेड करना निरंतर विकास का समर्थन करता है।</string>
     <string name="upgrade_screen_subscription_trial_action">निशुल्क प्रयोग प्रारंभ करें</string>
     <string name="upgrade_screen_subscription_action">सदस्यता लें</string>
     <string name="upgrade_screen_subscription_action_hint">%s/माह, कभी भी रद्द करें</string>

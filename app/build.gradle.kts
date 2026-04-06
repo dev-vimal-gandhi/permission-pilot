@@ -12,7 +12,7 @@ plugins {
 apply(plugin = "dagger.hilt.android.plugin")
 
 android {
-    val packageName = "eu.darken.myperm"
+    val packageName = "com.servalabs.perms"
 
     compileSdk = ProjectConfig.compileSdk
 
@@ -87,6 +87,7 @@ android {
             }
             isMinifyEnabled = true
             isShrinkResources = true
+            signingConfig = signingConfigs.getByName("debug") 
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
             proguardFiles(*customProguardRules.toList().toTypedArray())
         }
@@ -125,7 +126,7 @@ android {
     }
     experimentalProperties["android.experimental.enableScreenshotTest"] = true
 
-    namespace = "eu.darken.myperm"
+    namespace = "com.servalabs.perms"
 
     ksp {
         arg("room.schemaLocation", "$projectDir/schemas")
@@ -141,7 +142,7 @@ androidComponents {
             .replace(Regex("([a-z])([A-Z])"), "$1-$2")
             .uppercase()
 
-        val packageName = "eu.darken.myperm"
+        val packageName = "com.servalabs.perms"
         val apkFolder = variant.artifacts.get(com.android.build.api.artifact.SingleArtifact.APK)
         val loader = variant.artifacts.getBuiltArtifactsLoader()
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
-    <string name="app_name">Permission Pilot</string>
+    <string name="app_name">Serva Perms</string>
     <string name="label_help">도움말</string>
     <string name="general_error_label">오류</string>
     <string name="general_share_action">공유</string>
@@ -495,7 +495,7 @@
     <string name="debug_debuglog_screen_zip_pending">ZIP: …</string>
     <string name="debug_debuglog_screen_duration_ms">%1$d분 %2$d초</string>
     <string name="debug_debuglog_screen_duration_s">%1$d초</string>
-    <string name="support_debuglog_share_subject">Permission Pilot DebugLog - %s</string>
+    <string name="support_debuglog_share_subject">Serva Perms DebugLog - %s</string>
     <!-- Contact form email tags -->
     <string name="contact_email_tag_question">질문</string>
     <string name="contact_email_tag_feature">기능</string>
@@ -503,8 +503,8 @@
     <string name="contact_email_section_expected_behavior">--- 기대 동작 ---</string>
     <string name="contact_email_section_device_info">--- 기기 정보 ---</string>
     <string name="onboarding_body1">이 앱은 설치된 애플리케이션을 탐색하고 권한을 발견하는 데 도움이 됩니다.</string>
-    <string name="onboarding_body2">Permission Pilot은 이 애플리케이션을 사용할 때 앱을 나열하고 해당 권한을 상호 참조할 수 있도록 설치된 애플리케이션 정보를 수집합니다.</string>
-    <string name="onboarding_body3">Permission Pilot에는 광고가 없으며 데이터를 로컬에서만 처리합니다.</string>
+    <string name="onboarding_body2">Serva Perms은 이 애플리케이션을 사용할 때 앱을 나열하고 해당 권한을 상호 참조할 수 있도록 설치된 애플리케이션 정보를 수집합니다.</string>
+    <string name="onboarding_body3">Serva Perms에는 광고가 없으며 데이터를 로컬에서만 처리합니다.</string>
     <!-- Theme settings -->
     <string name="ui_theme_mode_label">테마 모드</string>
     <string name="ui_theme_mode_system_label">기기 테마 사용</string>
@@ -530,7 +530,7 @@
     <string name="upgrade_benefit_support">개발자 지원하기</string>
     <string name="upgrade_benefit_manifest_viewer">원시 앱 매니페스트 탐색</string>
     <string name="general_upgrade_action">업그레이드</string>
-    <string name="upgrade_title_prefix">Permission Pilot</string>
+    <string name="upgrade_title_prefix">Serva Perms</string>
     <!-- Permission Watcher -->
     <string name="watcher_tab_label">감시자</string>
     <string name="watcher_dashboard_feature_title">권한 감시자</string>

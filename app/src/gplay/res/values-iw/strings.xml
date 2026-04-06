@@ -2,7 +2,7 @@
 <resources>
     <string name="upgrades_gplay_unavailable_error">שירותי Google Play אינם זמינים.</string>
     <string name="upgrades_no_purchases_found_check_account">לא נמצאו רכישות. האם את/ה משתמש/ת בחשבון הנכון?</string>
-    <string name="upgrade_screen_preamble">Permission Pilot היא בללי פרסומות ומכבדת את פרטיותך. שדרוג תומך בפיתוח המשך.</string>
+    <string name="upgrade_screen_preamble">Serva Perms היא בללי פרסומות ומכבדת את פרטיותך. שדרוג תומך בפיתוח המשך.</string>
     <string name="upgrade_screen_subscription_trial_action">התחל ניסיון חינם</string>
     <string name="upgrade_screen_subscription_action">הירשם כמנוי</string>
     <string name="upgrade_screen_subscription_action_hint">%s לחודש, ביטול בכל עת</string>

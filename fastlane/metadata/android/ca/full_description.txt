@@ -1,4 +1,4 @@
-El <i>Permission Pilot</i> és un nou tipus d'aplicació per ajudar-vos a revisar les aplicacions i els seus permisos.
+El <i>Serva Perms</i> és un nou tipus d'aplicació per ajudar-vos a revisar les aplicacions i els seus permisos.
 
 Amb cada actualització d'Android, els permisos es fan més complexos.
 El fet que l'Android mostri els permisos en diverses ubicacions diferents no facilita la seva revisió:
@@ -8,7 +8,7 @@ El fet que l'Android mostri els permisos en diverses ubicacions diferents no fac
 * Gestor de permisos
 * i molt més...
 
-El <i>Permission Pilot</i> llista tots els permisos en un sol lloc, oferint-vos una visió general dels permisos de les aplicacions.
+El <i>Serva Perms</i> llista tots els permisos en un sol lloc, oferint-vos una visió general dels permisos de les aplicacions.
 
 Hi ha dues perspectives disponibles: podeu veure tots els permisos que sol·licita una aplicació, o veure totes les aplicacions que sol·liciten un permís.
 

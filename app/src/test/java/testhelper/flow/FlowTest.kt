@@ -1,8 +1,8 @@
 package testhelper.flow
 
-import eu.darken.myperm.common.debug.logging.Logging.Priority.WARN
-import eu.darken.myperm.common.debug.logging.asLog
-import eu.darken.myperm.common.debug.logging.log
+import com.servalabs.perms.common.debug.logging.Logging.Priority.WARN
+import com.servalabs.perms.common.debug.logging.asLog
+import com.servalabs.perms.common.debug.logging.log
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.flow.*
