@@ -35,10 +35,10 @@ sealed class AExtraPerm constructor(val id: Permission.Id) {
 
     companion object {
         val values: List<AExtraPerm> by lazy {
-            AExtraPerm::class.nestedClasses
-                .filter { clazz -> clazz.isSubclassOf(AExtraPerm::class) }
-                .map { clazz -> clazz.objectInstance }
-                .filterIsInstance<AExtraPerm>()
+            listOf(
+                PICTURE_IN_PICTURE,
+                LEGACY_STORAGE,
+            )
         }
     }
 }

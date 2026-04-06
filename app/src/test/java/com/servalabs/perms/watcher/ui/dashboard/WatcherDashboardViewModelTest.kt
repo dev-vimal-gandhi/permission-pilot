@@ -9,6 +9,7 @@ import com.servalabs.perms.watcher.core.WatcherNotificationCapability
 import com.servalabs.perms.watcher.core.WatcherNotifications
 import com.servalabs.perms.watcher.core.WatcherWorkScheduler
 import io.kotest.matchers.shouldBe
+import io.mockk.coEvery
 import io.mockk.every
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
@@ -33,6 +34,7 @@ class WatcherDashboardViewModelTest : BaseTest() {
 
     private val isWatcherEnabled = MutableStateFlow(false)
     private val isNotificationsEnabled = MutableStateFlow(true)
+    private val isBatteryHintDismissed = MutableStateFlow(false)
     private val upgradeInfo = MutableStateFlow<UpgradeRepo.Info>(mockk { every { isPro } returns true })
     private val watcherFilterOptions = MutableStateFlow(WatcherFilterOptions())
 
@@ -45,6 +47,7 @@ class WatcherDashboardViewModelTest : BaseTest() {
         every { phase } returns MutableStateFlow(null)
     }
     private val watcherNotifications: WatcherNotifications = mockk(relaxed = true)
+    private val batteryCapability: WatcherBatteryCapability = mockk()
     private val json: Json = Json { ignoreUnknownKeys = true }
 
     @BeforeEach
@@ -63,8 +66,19 @@ class WatcherDashboardViewModelTest : BaseTest() {
         every { upgradeRepo.upgradeInfo } returns upgradeInfo
         every { changeDao.getAll() } returns flowOf(emptyList())
 
+        every { generalSettings.isWatcherBatteryHintDismissed } returns mockk<DataStoreValue<Boolean>> {
+            every { flow } returns isBatteryHintDismissed
+        }
+        every { generalSettings.watcherLastSuccessfulPollAt } returns mockk<DataStoreValue<Long>> {
+            every { valueBlocking } returns 0L
+        }
+        every { generalSettings.watcherPollingIntervalHours } returns mockk<DataStoreValue<Int>> {
+            every { valueBlocking } returns 4
+        }
+
         every { capability.areNotificationsEnabled() } returns true
         every { capability.isRuntimePermissionDenied() } returns false
+        every { batteryCapability.isBatteryOptimizationIgnored() } returns true
     }
 
     @AfterEach
@@ -81,6 +95,7 @@ class WatcherDashboardViewModelTest : BaseTest() {
         watcherWorkScheduler = watcherWorkScheduler,
         watcherManager = watcherManager,
         watcherNotifications = watcherNotifications,
+        batteryCapability = batteryCapability,
         json = json,
     )
 
@@ -173,5 +188,83 @@ class WatcherDashboardViewModelTest : BaseTest() {
 
         val state2 = vm.state.first { it != null && it.isWatcherEnabled && !it.showNotificationPermissionCard }
         state2!!.showNotificationPermissionCard shouldBe false
+    }
+
+    @Test
+    fun `battery card hidden when watcher disabled`() = runTest(testDispatcher) {
+        isWatcherEnabled.value = false
+        every { batteryCapability.isBatteryOptimizationIgnored() } returns false
+
+        val vm = createVM()
+        val state = vm.state.first { it != null && it != WatcherDashboardViewModel.State() }
+
+        state!!.showBatteryOptimizationCard shouldBe false
+    }
+
+    @Test
+    fun `battery card hidden when battery optimization ignored`() = runTest(testDispatcher) {
+        isWatcherEnabled.value = true
+        every { batteryCapability.isBatteryOptimizationIgnored() } returns true
+
+        val vm = createVM()
+        vm.refreshBatteryState()
+        val state = vm.state.first { it != null && it.isWatcherEnabled }
+
+        state!!.showBatteryOptimizationCard shouldBe false
+    }
+
+    @Test
+    fun `battery card hidden when no poll has ever run`() = runTest(testDispatcher) {
+        isWatcherEnabled.value = true
+        every { batteryCapability.isBatteryOptimizationIgnored() } returns false
+        every { generalSettings.watcherLastSuccessfulPollAt.valueBlocking } returns 0L
+
+        val vm = createVM()
+        val state = vm.state.first { it != null && it.isWatcherEnabled }
+
+        state!!.showBatteryOptimizationCard shouldBe false
+    }
+
+    @Test
+    fun `battery card shown when optimized and stale`() = runTest(testDispatcher) {
+        isWatcherEnabled.value = true
+        every { batteryCapability.isBatteryOptimizationIgnored() } returns false
+        every { generalSettings.watcherLastSuccessfulPollAt.valueBlocking } returns 1L
+
+        val vm = createVM()
+        val state = vm.state.first { it != null && it.isWatcherEnabled && it.showBatteryOptimizationCard }
+
+        state!!.showBatteryOptimizationCard shouldBe true
+    }
+
+    @Test
+    fun `battery card hidden when dismissed`() = runTest(testDispatcher) {
+        isWatcherEnabled.value = true
+        isBatteryHintDismissed.value = true
+        every { batteryCapability.isBatteryOptimizationIgnored() } returns false
+        every { generalSettings.watcherLastSuccessfulPollAt.valueBlocking } returns 1L
+
+        val vm = createVM()
+        val state = vm.state.first { it != null && it.isWatcherEnabled }
+
+        state!!.showBatteryOptimizationCard shouldBe false
+    }
+
+    @Test
+    fun `battery card reappears when dismiss is reset`() = runTest(testDispatcher) {
+        isWatcherEnabled.value = true
+        isBatteryHintDismissed.value = true
+        every { batteryCapability.isBatteryOptimizationIgnored() } returns false
+        every { generalSettings.watcherLastSuccessfulPollAt.valueBlocking } returns 1L
+
+        val vm = createVM()
+        val state1 = vm.state.first { it != null && it.isWatcherEnabled }
+        state1!!.showBatteryOptimizationCard shouldBe false
+
+        every { generalSettings.watcherLastSuccessfulPollAt.valueBlocking } returns 1L
+        isBatteryHintDismissed.value = false
+        vm.refreshBatteryState()
+        val state2 = vm.state.first { it != null && it.isWatcherEnabled && it.showBatteryOptimizationCard }
+        state2!!.showBatteryOptimizationCard shouldBe true
     }
 }

@@ -1,6 +1,7 @@
 package com.servalabs.perms.export.ui
 
 import android.annotation.SuppressLint
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.SavedStateHandle
@@ -86,7 +87,7 @@ class ExportViewModel @Inject constructor(
     val events = SingleEventFlow<Event>()
 
     sealed interface Event {
-        data class LaunchSaf(val mimeType: String, val fileName: String) : Event
+        data class LaunchSaf(val fileName: String) : Event
     }
 
     data class State(
